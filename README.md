@@ -6,4 +6,6 @@ To build:
 - Make sure that you've sourced your workspace's devel/setup.bash!
 
 To run:
-- `rosrun kojaks kojaks_node`
+- `rosrun kojaks kojaks_node <bagfile name>`
+
+e.g. `rosrun kojaks kojaks_node Set1-8_f`

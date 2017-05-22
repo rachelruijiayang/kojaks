@@ -1,6 +1,6 @@
 <launch>
 	<arg name="bagfile_path" default="/home/ruijia/udacity_competition/Didi-Release-2/Data/2/8_f.bag" />
-	<arg name="truexml_path" default="/home/ruijia/udacity_competition/true_tracklets/2/8_f/tracklet_labels.xml" />
+	<arg name="truexml_path" default="$(find kojaks)/true_tracklets/2/8_f/tracklet_labels.xml" />
 	<arg name="genfiles_dir" default="$(find kojaks)/genfiles/" />
 	<arg name="genxml_name" default="Set2-8_f" />
 

@@ -10,5 +10,6 @@
 	<node pkg="velodyne_pointcloud" type="cloud_node" name="velodyne_cloud_node" args="_calibration:=/opt/ros/indigo/share/velodyne_pointcloud/params/32db.yaml" />
 	<node pkg="rviz" type="rviz" name="rviz_default" args="-d $(find kojaks)/rviz/default.rviz" />
 	<node pkg="kojaks" type="kojaks_node.py" name="kojaks_trainer" required="true" output="screen" args="$(arg bagfile_path) $(arg truexml_path) $(arg genfiles_dir) $(arg genxml_name)" />
+	<node pkg="kojaks" type="tracklet_viz.py" name="tracklet_viz" args="$(arg truexml_path)" />
 	<node pkg="rosbag" type="play" name="rosbag_play" args="$(arg bagfile_path)" required="false" output="screen" />
 </launch>

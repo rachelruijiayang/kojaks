@@ -42,7 +42,7 @@ class KojaksNode:
 	def __init__(self):
 		self.bridge = CvBridge()
 		self.image_sub = rospy.Subscriber("/image_raw", Image, self.imageCb)
-		self.true_car_markers_pub = rospy.Publisher("/true_car_markers", Marker, queue_size = 100)
+		self.gen_car_markers_pub = rospy.Publisher("gen_car_markers", Marker, queue_size = 100)
 
 		# preprocess tracklets
 		self.true_tracklet_collection = pt.parse_xml(truexml_path)
@@ -55,6 +55,9 @@ class KojaksNode:
 			w=self.true_car_tracklet.size[2], h=self.true_car_tracklet.size[0], first_frame=0)
 		self.gen_tracklet_collection.tracklets.append(self.gen_car_tracklet)
 
+		# bbox settings
+		self.bbox_length = self.true_car_tracklet.size[2]
+		self.bbox_height = self.true_car_tracklet.size[0]
 
 	def imageCb(self, data):
 		true_pose = self.get_true_pose()
@@ -67,16 +70,44 @@ class KojaksNode:
 			print(e)
 		self.gen_tracklet_collection.tracklets[0].poses.append({"tx": gen_pose[0], "ty": gen_pose[1], "tz": gen_pose[2], "rx": 0, "ry": 0, "rz": 0})
 
+		# Publish a marker for the newly predicted pose
+		self.gen_car_markers_Pb(data, gen_pose)
+
 		# increment
 		self.true_car_tracklet_ctr += 1
 
 	def get_true_pose(self):
 		return self.true_car_tracklet.trans[self.true_car_tracklet_ctr]
 
+	def gen_car_markers_Pb(self, imdata, gen_pose):
+		marker = Marker()
+		marker.header.frame_id = "velodyne"
+		marker.header.stamp = imdata.header.stamp
+		marker.type = Marker.CUBE
+		marker.action = marker.ADD
+
+		marker.pose.position.x = gen_pose[0]
+		marker.pose.position.y = gen_pose[1]
+		marker.pose.position.z = gen_pose[2]
+
+		# Hardcode the size of the car
+		marker.scale.x = self.bbox_length
+		marker.scale.y = self.bbox_length # length
+		marker.scale.z = self.bbox_height # height
+
+		marker.color.r = 0.0
+		marker.color.g = 0.6
+		marker.color.b = 0.6
+		marker.color.a = 0.7
+
+		marker.lifetime = rospy.Duration()
+
+		self.gen_car_markers_pub.publish(marker)
+
 def main():
 	# ROS node setup
-	kojaks_node = KojaksNode()
 	rospy.init_node("kojaks_node")
+	kojaks_node = KojaksNode()
 	
 	try:
 		rospy.spin()

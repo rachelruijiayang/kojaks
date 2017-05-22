@@ -1,5 +1,19 @@
 # kojaks
 
+## tracklet_viz.py
+
+To run:
+- `rosrun kojaks tracklet_viz.py <path to bagfile's true tracklet_labels.xml file>`
+
+*Note: tracklet_viz.py must be started BEFORE playing your bagfile!* Then, play your bagfile. Playing the bagfile in a loop (using the -l flag) is okay.
+
+Visualize in rviz using rviz/default.rviz.
+
+======================================
+Old documentation
+
+# kojaks
+
 To build:
 - git clone this package into your workspace's src directory (e.g. udacity_ws/src)
 - Run `catkin_make` in the top level of your workspace
@@ -16,7 +30,7 @@ Also, here's a script for launching the nodes necessary for visualizing a bagfil
 
 (Replace my paths with yours)
 
-# Kojaks trainer
+## Kojaks trainer
 
 To run:
 -`rosrun kojaks kojaks_trainer.py <path true_tracklet file> <xml appended name>`

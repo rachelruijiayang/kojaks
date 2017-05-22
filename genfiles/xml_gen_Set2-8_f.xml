@@ -11,9 +11,26 @@
 		<l>4.191000</l>
 		<first_frame>0</first_frame>
 		<poses class_id="2" tracking_level="0" version="0">
-			<count>88</count>
+			<count>89</count>
 			<item_version>2</item_version>
 			<item class_id="3" tracking_level="0" version="2">
+				<tx>10.000000</tx>
+				<ty>10.000000</ty>
+				<tz>-1.000000</tz>
+				<rx>0.000000</rx>
+				<ry>0.000000</ry>
+				<rz>0.000000</rz>
+				<state>1</state>
+				<occlusion>-1</occlusion>
+				<occlusion_kf>-1</occlusion_kf>
+				<truncation>-1</truncation>
+				<amt_occlusion>0.0</amt_occlusion>
+				<amt_occlusion_kf>-1</amt_occlusion_kf>
+				<amt_border_l>0.0</amt_border_l>
+				<amt_border_r>0.0</amt_border_r>
+				<amt_border_kf>-1</amt_border_kf>
+			</item>
+			<item>
 				<tx>10.000000</tx>
 				<ty>10.000000</ty>
 				<tz>-1.000000</tz>

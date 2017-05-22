@@ -1,10 +1,10 @@
 <launch>
 	<arg name="bagfile_path" default="/home/ruijia/udacity_competition/Didi-Release-2/Data/2/8_f.bag" />
 	<arg name="truexml_path" default="/home/ruijia/udacity_competition/true_tracklets/2/8_f/tracklet_labels.xml" />
-	<arg name="genfiles_dir" default="/home/ruijia/udacity_competition/udacity_ws/src/kojaks/genfiles/" />
+	<arg name="genfiles_dir" default="$(find kojaks)/genfiles/" />
 	<arg name="genxml_name" default="Set2-8_f" />
 
-	<arg name="tf_path" default="/home/ruijia/udacity_competition/udacity_ws/src/didi-competition/mkz-description/tf.launch" />
+	<arg name="tf_path" default="$(find kojaks)/launch/tf.launch" />
 
 	<include file="$(arg tf_path)" />
 	<node pkg="velodyne_pointcloud" type="cloud_node" name="velodyne_cloud_node" args="_calibration:=/opt/ros/indigo/share/velodyne_pointcloud/params/32db.yaml" />

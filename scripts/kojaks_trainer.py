@@ -51,7 +51,7 @@ class KojaksNode:
     tracklet_collection.tracklets[0].poses.append({"tx": 9.215063, "ty": 0.448629, "tz": -0.327621, "rx": 0, "ry": 0, "rz": 0})
     self.printCarPose()
     # read the next bounding box from the file, publish it as a marker
-    self.car_markerPb()
+    #self.car_markerPb()
 
   # print the CORRECT current pose
   def printCarPose(self):
@@ -60,9 +60,10 @@ class KojaksNode:
   	print("")
   	self.car_tracklet_ctr += 1
 
+"""
   def car_markerPb(self):  	
   	marker = Marker()
-  	marker.header.frame_id = "/base_link" # FIX
+  	marker.header.frame_id = "obs_centroid" # FIX
   	marker.type = marker.POINTS
   	marker.action = marker.ADD
   	marker.pose.position.x = self.car_tracklet.trans[self.car_tracklet_ctr][0]
@@ -78,6 +79,7 @@ class KojaksNode:
   	marker.color.b = 0.0
 
   	self.car_marker_pub.publish(marker)
+"""
 
 def main():
   # ROS node setup
@@ -88,7 +90,7 @@ def main():
     rospy.spin()
   except:
     print("Writing tracklet collection to xml_gen_"+bagname+".xml")
-    tracklet_collection.write_xml(os.path.abspath("/home/ruijia/udacity_competition/udacity_ws/src/kojaks/genfiles/xml_gen_" +bagname+ ".xml"))
+    tracklet_collection.write_xml(os.path.abspath("../genfiles/xml_gen_" +bagname+ ".xml"))
     print("Shutting down")
   cv2.destroyAllWindows()
 

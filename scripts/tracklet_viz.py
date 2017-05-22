@@ -56,8 +56,8 @@ class TrackletViz:
 		marker.scale.y = self.car_tracklet.size[2] # length
 		marker.scale.z = self.car_tracklet.size[0] # height
 
-		marker.color.r = 0.7
-		marker.color.g = 0.7
+		marker.color.r = 0.0
+		marker.color.g = 0.9
 		marker.color.b = 0.0
 		marker.color.a = 0.7
 

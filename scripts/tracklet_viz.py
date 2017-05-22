@@ -9,11 +9,15 @@ from std_msgs.msg import String
 from sensor_msgs.msg import Image
 from visualization_msgs.msg import Marker
 
-print("tracklet_labels.xml file: " + sys.argv[1])
-xml_file = os.path.abspath(sys.argv[1])
-
 # Tracklet parsing
 import parse_tracklet as pt
+
+if len(sys.argv) < 2:
+	print("usage: rosrun kojaks tracklet_viz.py <path to bagfile's true tracklet_labels.xml file>")
+	exit(0)
+
+print("tracklet_labels.xml file: " + sys.argv[1])
+xml_file = os.path.abspath(sys.argv[1])
 
 class TrackletViz:
 
@@ -31,6 +35,10 @@ class TrackletViz:
 		# Publish current tracklet item
 		self.true_car_markersPb(data)
 
+	# get_trans() returns a len-3 float array (height, width, length)
+	def get_trans(self):
+		return self.car_tracklet.trans[self.car_tracklet_ctr]
+
 	def true_car_markersPb(self, imdata):
 		marker = Marker()
 		marker.header.frame_id = "velodyne"
@@ -38,9 +46,10 @@ class TrackletViz:
 		marker.type = Marker.CUBE
 		marker.action = marker.ADD
 
-		marker.pose.position.x = self.car_tracklet.trans[self.car_tracklet_ctr][0]
-		marker.pose.position.y = self.car_tracklet.trans[self.car_tracklet_ctr][1]
-		marker.pose.position.z = self.car_tracklet.trans[self.car_tracklet_ctr][2]
+		cur_pose = self.get_trans()
+		marker.pose.position.x = cur_pose[0]
+		marker.pose.position.y = cur_pose[1]
+		marker.pose.position.z = cur_pose[2]
 
 		# Hardcode the size of the car
 		marker.scale.x = self.car_tracklet.size[2] # length

@@ -4,51 +4,89 @@ roslib.load_manifest('kojaks')
 import sys, os
 import rospy
 import cv2
+
+# Messages
 from std_msgs.msg import String
 from sensor_msgs.msg import Image
+from visualization_msgs.msg import Marker
 from cv_bridge import CvBridge, CvBridgeError
 import signal
 
-def ctrl_c_handler(signal, frame):
-  print("You pressed Ctrl+C!")
-  sys.exit(0)
-
-# Tracklet generation
+# Tracklets
 import generate_tracklet as gt
+import parse_tracklet as pt
 
-tracklet_collection = gt.TrackletCollection() 
-new_item = gt.Tracklet(object_type="Car", l=4.191000, w=1.574800, h=1.524000, first_frame=0)
-tracklet_collection.tracklets.append(new_item)
+# Kojaks predictor
+import kojaks_predictor as kp
+
+if len(sys.argv) < 5:
+	print("usage: rosrun kojaks kojaks_trainer.py <bagfile_path> <truexml_path> <genfiles_dir> " +
+		"<genxml_name>")
+	exit(0)
+
+bagfile_path = sys.argv[1]
+truexml_path = sys.argv[2]
+genfiles_dir = sys.argv[3]
+genxml_name = sys.argv[4]
+
+print("bagfile_path: " + bagfile_path)
+print("truexml_path: " + truexml_path)
+print("genfiles_dir: " + genfiles_dir)
+print("genxml_name: " + genxml_name)
+
+def ctrl_c_handler(signal, frame):
+	print("You pressed Ctrl+C!")
+	sys.exit(0)
 
 class KojaksNode:
+	def __init__(self):
+		self.bridge = CvBridge()
+		self.image_sub = rospy.Subscriber("/image_raw", Image, self.imageCb)
+		self.true_car_markers_pub = rospy.Publisher("/true_car_markers", Marker, queue_size = 100)
 
-  def __init__(self):
-    self.bridge = CvBridge()
-    self.image_sub = rospy.Subscriber("/image_raw", Image, self.imageCb)
+		# preprocess tracklets
+		self.true_tracklet_collection = pt.parse_xml(truexml_path)
+		self.true_car_tracklet = self.true_tracklet_collection[0]
+		self.true_car_tracklet_ctr = 0
 
-  def imageCb(self, data):
-    try:
-      cv_image = self.bridge.imgmsg_to_cv2(data, "bgr8")
-      tracklet_collection.tracklets[0].poses.append({"tx": 9.215063, "ty": 0.448629, "tz": -0.327621, "rx": 0, "ry": 0, "rz": 0})
-    except CvBridgeError as e:
-      print(e)
+		# Set up tracklet generator
+		self.gen_tracklet_collection = gt.TrackletCollection()
+		self.gen_car_tracklet = gt.Tracklet(object_type="Car", l=self.true_car_tracklet.size[2], 
+			w=self.true_car_tracklet.size[2], h=self.true_car_tracklet.size[0], first_frame=0)
+		self.gen_tracklet_collection.tracklets.append(self.gen_car_tracklet)
 
-def main(args):
-  bagname = args[1]
-  print("bagname: " + bagname)
 
-  # ROS node setup
-  kojaks_node = KojaksNode()
-  rospy.init_node('KojaksNode', anonymous=True)
+	def imageCb(self, data):
+		true_pose = self.get_true_pose()
+		try:
+			cv_image = self.bridge.imgmsg_to_cv2(data, "bgr8")
+			# call jordi's opencv function; pass it the cv_image and the correct tracklet
+			# returns an array [tx, ty, tz]
+			gen_pose = kp.run_predictor_on_frame(cv_image, true_pose)
+		except CvBridgeError as e:
+			print(e)
+		self.gen_tracklet_collection.tracklets[0].poses.append({"tx": gen_pose[0], "ty": gen_pose[1], "tz": gen_pose[2], "rx": 0, "ry": 0, "rz": 0})
 
-  try:
-    rospy.spin()
-  except:
-    print("Writing tracklet collection to xml_gen_"+bagname+".xml")
-    tracklet_collection.write_xml(os.path.abspath("/home/ruijia/udacity_competition/udacity_ws/src/kojaks/genfiles/xml_gen_" +bagname+ ".xml"))
-    print("Shutting down")
-  cv2.destroyAllWindows()
+		# increment
+		self.true_car_tracklet_ctr += 1
+
+	def get_true_pose(self):
+		return self.true_car_tracklet.trans[self.true_car_tracklet_ctr]
+
+def main():
+	# ROS node setup
+	kojaks_node = KojaksNode()
+	rospy.init_node("kojaks_node")
+	
+	try:
+		rospy.spin()
+	except:
+		print("Writing tracklet collection to xml_gen_"+genxml_name+".xml")
+		kojaks_node.gen_tracklet_collection.write_xml(os.path.abspath(genfiles_dir+"xml_gen_" +genxml_name+ ".xml"))
+	finally:
+		cv2.destroyAllWindows()
+		print("Shutting down")
 
 if __name__ == '__main__':
-    signal.signal(signal.SIGINT, ctrl_c_handler)
-    main(sys.argv)
+	signal.signal(signal.SIGINT, ctrl_c_handler)
+	main()

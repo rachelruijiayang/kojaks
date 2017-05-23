@@ -41,8 +41,8 @@ def ctrl_c_handler(signal, frame):
 class KojaksNode:
 	def __init__(self):
 		self.bridge = CvBridge()
-		self.image_sub = rospy.Subscriber("/image_raw", Image, self.imageCb)
-		self.gen_car_markers_pub = rospy.Publisher("gen_car_markers", Marker, queue_size = 100)
+		self.image_sub = rospy.Subscriber("/image_raw", Image, self.imageCb, queue_size = 1000)
+		self.gen_car_markers_pub = rospy.Publisher("gen_car_markers", Marker, queue_size = 1000)
 
 		# preprocess tracklets
 		self.true_tracklet_collection = pt.parse_xml(truexml_path)
@@ -59,15 +59,25 @@ class KojaksNode:
 		self.bbox_length = self.true_car_tracklet.size[2]
 		self.bbox_height = self.true_car_tracklet.size[0]
 
+		# sensor state
+		self.cur_image = None
+		self.cur_laser = None
+
 	def imageCb(self, data):
 		true_pose = self.get_true_pose()
+
 		try:
 			cv_image = self.bridge.imgmsg_to_cv2(data, "bgr8")
-			# call jordi's opencv function; pass it the cv_image and the correct tracklet
-			# returns an array [tx, ty, tz]
-			gen_pose = kp.run_predictor_on_frame(cv_image, true_pose)
 		except CvBridgeError as e:
 			print(e)
+		
+		self.cur_image = cv_image
+		
+		# call jordi's opencv function; pass it the cv_image and the correct tracklet
+		# returns an array [tx, ty, tz]
+		gen_pose = kp.run_predictor_on_frame(cv_image, [], true_pose)
+
+		# append generated tracklet to tracklet list
 		self.gen_tracklet_collection.tracklets[0].poses.append({"tx": gen_pose[0], "ty": gen_pose[1], "tz": gen_pose[2], "rx": 0, "ry": 0, "rz": 0})
 
 		# Publish a marker for the newly predicted pose

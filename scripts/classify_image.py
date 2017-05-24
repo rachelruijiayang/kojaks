@@ -212,7 +212,7 @@ def maybe_download_and_extract():
   tarfile.open(filepath, 'r:gz').extractall(dest_directory)
 
 
-def classify_main(passed_image):
+def image_classify_main(passed_image):
   #maybe_download_and_extract()
   #image = (FLAGS.image_file if FLAGS.image_file else
   #         os.path.join(FLAGS.model_dir, 'cropped_panda.jpg'))

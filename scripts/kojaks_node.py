@@ -20,8 +20,7 @@ import parse_tracklet as pt
 import kojaks_predictor as kp
 
 if len(sys.argv) < 6:
-	print("usage: rosrun kojaks kojaks_trainer.py <bagfile_path> <truexml_path> <genfiles_dir> <kojaks_path>" +
-		"<genxml_name>")
+	print("usage: rosrun kojaks kojaks_trainer.py <bagfile_path> <kojaks_path> <bag_set> <bag_filename>")
 	exit(0)
 
 bagfile_path = sys.argv[1]
@@ -30,7 +29,7 @@ bag_set = sys.argv[3]
 bag_fn = sys.argv[4]
 
 truexml_path = kojaks_path + "/true_tracklets/"+bag_set+"/"+bag_fn+"/"+"tracklet_labels.xml"
-genxml_path = kojaks_path + "/genfiles/"+bag_set+"/"+bag_fn+"_xmlgen.xml"
+genxml_path = kojaks_path + "/genfiles/"+bag_set+"/"+bag_fn+"-xmlgen.xml"
 
 print("bagfile_path: " + bagfile_path)
 print("kojaks_path: " + kojaks_path)

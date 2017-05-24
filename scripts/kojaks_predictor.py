@@ -14,6 +14,7 @@ yolo.tofile_txt = "txtfile"
 yolo.filewrite_img = False
 yolo.filewrite_txt = False
 
+"""
 def transform2DBbox(bbox_2d):
 	x2 = bbox_2d[0]
 	y2 = bbox_2d[1]
@@ -35,6 +36,7 @@ def transform2DBbox(bbox_2d):
 	bbox_3d = 
 
 	return bbox_3d
+"""
 
 def run_predictor_on_frame(kojaks_path, cv_image, laser_points, true_pose):
 	#yolo = YOLO_TF(kojaks_path, cv_image)	# move this outside of the callback, to avoid building the network multiple times?
@@ -43,5 +45,6 @@ def run_predictor_on_frame(kojaks_path, cv_image, laser_points, true_pose):
 
 	# image handling
 	bbox_2d_coords = yolo.detect_from_cvmat(cv_image)
-	bbox_3d_coords = transform2DBbox(bbox_2d_coords)
-	return bbox_3d_coords
+	#bbox_3d_coords = transform2DBbox(bbox_2d_coords)
+	#return bbox_3d_coords
+	return [10,5.3,5.2]

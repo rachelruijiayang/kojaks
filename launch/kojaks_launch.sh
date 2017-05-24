@@ -2,7 +2,7 @@
 options=(--tab --title=Terminal)
 
 bag_set_arg=2
-bag_fn_arg=11_f
+bag_fn_arg=8_f
 bagfile_path_arg=/home/ruijia/udacity_competition/Didi-Release-2/Data/2/8_f.bag
 
 source ~/tensorflow/bin/activate

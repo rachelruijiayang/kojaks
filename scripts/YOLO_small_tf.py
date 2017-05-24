@@ -7,9 +7,9 @@ import sys
 
 class YOLO_TF:
 	kojaks_path = ""
-	imshow = True
-	disp_console = True
-	weights_file = ''
+	imshow = False
+	disp_console = False
+	weights_file = "dummydata"
 	alpha = 0.1
 	threshold = 0.2
 	iou_threshold = 0.5
@@ -21,14 +21,15 @@ class YOLO_TF:
 	w_img = 640
 	h_img = 480
 
-	def __init__(self, arg_kojaks_path):
+	def __init__(self, arg_kojaks_path, image):
 		# For visualizing
-		self.imshow = True
-		self.disp_console = True
-		self.build_networks()
+		self.imshow = False
+		self.disp_console = False
 		self.kojaks_path = arg_kojaks_path
-		self.weights_file = arg_kojaks_path+"/utils/YOLO_tensorflow/weights/YOLO_small.ckpt"
-				
+		self.weights_file = arg_kojaks_path+"/utils/YOLO_tensorflow/weights/YOLO_small.ckpt"	
+		self.build_networks()
+		self.detect_from_cvmat(image)
+
 	def build_networks(self):
 		if self.disp_console : print "Building YOLO_small graph..."
 		self.x = tf.placeholder('float32',[None,448,448,3])
@@ -65,7 +66,7 @@ class YOLO_TF:
 		#skip dropout_31
 		self.fc_32 = self.fc_layer(32,self.fc_30,1470,flat=False,linear=True)
 		self.sess = tf.Session()
-		self.sess.run(tf.initialize_all_variables())
+		self.sess.run(tf.global_variables_initializer())
 		self.saver = tf.train.Saver()
 		self.saver.restore(self.sess,self.weights_file)
 		if self.disp_console : print "Loading complete!" + '\n'

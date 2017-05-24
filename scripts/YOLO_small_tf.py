@@ -4,7 +4,7 @@ import cv2
 import time
 import sys
 
-kojaks_path = "/home/ruijia/udacity_competition/udacity_ws/src/kojaks"
+kojaks_path = "/home/ubuntu/udacity_ws/src/kojaks"
 
 class YOLO_TF:
 	fromfile = None

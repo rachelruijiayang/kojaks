@@ -4,6 +4,7 @@ To install:
 - git clone this repo into your ROS workspace's src directory (e.g. udacity_ws/src)
 - Download YOLO_small : https://drive.google.com/file/d/0B2JbaJSrWLpza08yS2FSUnV2dlE/view?usp=sharing and put it in utils/YOLO_tensorflow/weights
 - Make sure that Didi-Release-2 is downloaded somewhere on your computer
+- Go to the top of scripts/YOLO_small_tf.py and change the value of weights_file to the actual path to the kojaks folder on your comupter 
 
 To run everything:
 - Specify the Set (1, 2, 3, or Round1Test) and Bagfile you want to play by changing the bag_set_arg and bag_fn_arg strings

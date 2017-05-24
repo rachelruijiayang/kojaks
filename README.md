@@ -1,8 +1,11 @@
 # kojaks
 
-To run everything:
+To install:
 - git clone this repo into your ROS workspace's src directory (e.g. udacity_ws/src)
+- Download YOLO_small : https://drive.google.com/file/d/0B2JbaJSrWLpza08yS2FSUnV2dlE/view?usp=sharing and put it in utils/YOLO_tensorflow/weights
 - Make sure that Didi-Release-2 is downloaded somewhere on your computer
+
+To run everything:
 - Specify the Set (1, 2, 3, or Round1Test) and Bagfile you want to play by changing the bag_set_arg and bag_fn_arg strings
 - Modify `kojaks/launch/kojaks_launch.sh` so that the path in bagfile_path_arg (before `/Data/$bag_set_arg/$bag_fn_arg.bag`) points to the path to Didi-Release-2 on your computer.
 - Modify `sleep_before_bagfile_play` to change the number of seconds to wait before playing the bagfile. It's necessary to wait before playing the bagfile so that tracklet_viz.py has time to parse the bagfile's tracklet_labels.xml file BEFORE the bagfile begins. The default sleep time is 10, which is sufficient for the largest bagfiles (containing around 60s of video).

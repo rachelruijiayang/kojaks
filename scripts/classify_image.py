@@ -175,8 +175,6 @@ def run_inference_on_image(image_array):
     #   1000 labels.
     # 'pool_3:0': A tensor containing the next-to-last layer containing 2048
     #   float description of the image.
-    # 'DecodeJpeg/contents:0': A tensor containing a string providing JPEG
-    #   encoding of the image.
     # Runs the softmax tensor by feeding the image_data as input to the graph.
     softmax_tensor = sess.graph.get_tensor_by_name('softmax:0')
     predictions = sess.run(softmax_tensor,
@@ -212,10 +210,11 @@ def maybe_download_and_extract():
   tarfile.open(filepath, 'r:gz').extractall(dest_directory)
 
 
-def image_classify_main(passed_image):
+def image_classify_main(kojaks_path, passed_image):
   #maybe_download_and_extract()
   #image = (FLAGS.image_file if FLAGS.image_file else
   #         os.path.join(FLAGS.model_dir, 'cropped_panda.jpg'))
+  FLAGS.model_dir = kojaks_path+"/utils/imagenet"
   image = passed_image
   run_inference_on_image(image)
 

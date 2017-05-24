@@ -6,7 +6,7 @@ import classify_image
 
 # cv_image is an image accepted by OpenCV 2
 # pose is a len-3 [tx, ty, tz] array representing the obs_car's translation relative to the velodyne link on the capture car
-def run_predictor_on_frame(cv_image, laser_points, true_pose):
-	classify_image.image_classify_main(cv_image)
+def run_predictor_on_frame(kojaks_path, cv_image, laser_points, true_pose):
+	classify_image.image_classify_main(kojaks_path, cv_image)
 	return [10.0, 10.0, -1.0] 
 

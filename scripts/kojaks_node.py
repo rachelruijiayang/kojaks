@@ -19,20 +19,23 @@ import parse_tracklet as pt
 # Kojaks predictor
 import kojaks_predictor as kp
 
-if len(sys.argv) < 5:
-	print("usage: rosrun kojaks kojaks_trainer.py <bagfile_path> <truexml_path> <genfiles_dir> " +
+if len(sys.argv) < 6:
+	print("usage: rosrun kojaks kojaks_trainer.py <bagfile_path> <truexml_path> <genfiles_dir> <kojaks_path>" +
 		"<genxml_name>")
 	exit(0)
 
 bagfile_path = sys.argv[1]
-truexml_path = sys.argv[2]
-genfiles_dir = sys.argv[3]
-genxml_name = sys.argv[4]
+kojaks_path = sys.argv[2] # kojaks_path stores the absolute path
+bag_set = sys.argv[3]
+bag_fn = sys.argv[4]
+
+truexml_path = kojaks_path + "/true_tracklets/"+bag_set+"/"+bag_fn+"/"+"tracklet_labels.xml"
+genxml_path = kojaks_path + "/genfiles/"+bag_set+"/"+bag_fn+"_xmlgen.xml"
 
 print("bagfile_path: " + bagfile_path)
+print("kojaks_path: " + kojaks_path)
 print("truexml_path: " + truexml_path)
-print("genfiles_dir: " + genfiles_dir)
-print("genxml_name: " + genxml_name)
+print("genxml_path: " + genxml_path)
 
 def ctrl_c_handler(signal, frame):
 	print("You pressed Ctrl+C!")
@@ -75,7 +78,7 @@ class KojaksNode:
 		
 		# call jordi's opencv function; pass it the cv_image and the correct tracklet
 		# returns an array [tx, ty, tz]
-		gen_pose = kp.run_predictor_on_frame(cv_image, [], true_pose)
+		gen_pose = kp.run_predictor_on_frame(kojaks_path, cv_image, [], true_pose)
 
 		# append generated tracklet to tracklet list
 		self.gen_tracklet_collection.tracklets[0].poses.append({"tx": gen_pose[0], "ty": gen_pose[1], "tz": gen_pose[2], "rx": 0, "ry": 0, "rz": 0})
@@ -122,8 +125,8 @@ def main():
 	try:
 		rospy.spin()
 	except:
-		print("Writing tracklet collection to xml_gen_"+genxml_name+".xml")
-		kojaks_node.gen_tracklet_collection.write_xml(os.path.abspath(genfiles_dir+"xml_gen_" +genxml_name+ ".xml"))
+		print("Writing tracklet collection to " + genxml_path)
+		kojaks_node.gen_tracklet_collection.write_xml(genxml_path)
 	finally:
 		cv2.destroyAllWindows()
 		print("Shutting down")

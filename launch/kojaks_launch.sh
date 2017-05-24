@@ -1,8 +1,8 @@
 #!/bin/bash
 options=(--tab --title=Terminal)
 
-bag_set_arg="1"
-bag_fn_arg="2"
+bag_set_arg="3"
+bag_fn_arg="9"
 bagfile_path_arg="/home/ruijia/udacity_competition/Didi-Release-2/Data/$bag_set_arg/$bag_fn_arg.bag"
 
 sleep_before_bagfile_play="10"

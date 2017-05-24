@@ -8,11 +8,7 @@ from YOLO_small_tf import YOLO_TF
 # cv_image is an image accepted by OpenCV 2
 # pose is a len-3 [tx, ty, tz] array representing the obs_car's translation relative to the velodyne link on the capture car
 yolo = YOLO_TF()
-yolo.imshow = False
-yolo.tofile_img = "imgfile"
-yolo.tofile_txt = "txtfile"
-yolo.filewrite_img = False
-yolo.filewrite_txt = False
+yolo.imshow = True
 
 """
 def transform2DBbox(bbox_2d):
@@ -20,6 +16,10 @@ def transform2DBbox(bbox_2d):
 	y2 = bbox_2d[1]
 	w2 = bbox_2d[2]
 	h2 = bbox_2d[3]
+
+	# bottom left and bottom right of car bbox
+	bL = x2
+	bR = x2 + w2
 
 	# transform matrix
 	r0c0 = 0
@@ -44,7 +44,8 @@ def run_predictor_on_frame(kojaks_path, cv_image, laser_points, true_pose):
 	#yolo.detect_from_cvmat(cv_image)
 
 	# image handling
-	bbox_2d_coords = yolo.detect_from_cvmat(cv_image)
+	# yolo_result is in the format [['car', 756.87244, 715.84973, 343.4021, 304.45911, 0.80601584911346436]]
+	yolo_result = yolo.detect_from_cvmat(cv_image)
 	#bbox_3d_coords = transform2DBbox(bbox_2d_coords)
 	#return bbox_3d_coords
 	return [10,5.3,5.2]

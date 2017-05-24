@@ -8,7 +8,7 @@ from YOLO_small_tf import YOLO_TF
 # cv_image is an image accepted by OpenCV 2
 # pose is a len-3 [tx, ty, tz] array representing the obs_car's translation relative to the velodyne link on the capture car
 yolo = YOLO_TF()
-yolo.imshow = True
+yolo.imshow = False
 
 """
 def transform2DBbox(bbox_2d):

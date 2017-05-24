@@ -3,12 +3,13 @@
 To run everything:
 - git clone this repo into your ROS workspace's src directory (e.g. udacity_ws/src)
 - Make sure that Didi-Release-2 is downloaded somewhere on your computer
-- Modify kojaks/launch/launchall.launch so that the path in bagfile_path points to the path to Didi-Release-2 on your computer.
-- For the arguments bagfile_path, truexml_path, and genxml_name, modify the set and filename to pick the bagfile you want to play
-- Run `roslaunch kojaks launchall.launch`. rviz will pop up and show you something like this:
+- Specify the Set (1, 2, 3, or Round1Test) and Bagfile you want to play by changing the bag_set_arg and bag_fn_arg strings
+- Modify `kojaks/launch/kojaks_launch.sh` so that the path in bagfile_path_arg (before `/Data/$bag_set_arg/$bag_fn_arg.bag`) points to the path to Didi-Release-2 on your computer.
+- Modify `sleep_before_bagfile_play` to change the number of seconds to wait before playing the bagfile. It's necessary to wait before playing the bagfile so that tracklet_viz.py has time to parse the bagfile's tracklet_labels.xml file BEFORE the bagfile begins. The default sleep time is 10, which is sufficient for the largest bagfiles (containing around 60s of video).
+- Run `./kojaks_launch.sh` in the kojaks/launch folder. After $sleep_before_bagfile_play seconds, rviz will pop up and show you something like this:
 ![bboxes](https://github.com/rachelruijiayang/kojaks/blob/master/readme_files/rviz_bboxes.png?raw=true)
   - The blue box is the predicted obs_car (obstacle car) pose, and the green box is the actual obs_car pose.
-- When the bagfile is done playing, press Ctrl+C in the terminal you launched the launchall.launch from to write the generated tracklet collection to kojaks/genfiles/xml_gen_[genxml_name].xml
+- When the bagfile is done playing, press Ctrl+C in the terminal you launched the launchall.launch from to write the generated tracklet collection to kojaks/genfiles/[Set]/Set[Set]_[bagfile_name]-xmlgen.xml
 
 ======================================
 

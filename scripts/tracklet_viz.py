@@ -17,7 +17,8 @@ if len(sys.argv) < 2:
 	exit(0)
 
 print("tracklet_labels.xml file: " + sys.argv[1])
-xml_file = os.path.abspath(sys.argv[1])
+xml_file = sys.argv[1]
+print(xml_file)
 
 class TrackletViz:
 
@@ -35,10 +36,6 @@ class TrackletViz:
 		# Publish current tracklet item
 		self.true_car_markersPb(data)
 
-	# get_trans() returns a len-3 float array (height, width, length)
-	def get_trans(self):
-		return self.car_tracklet.trans[self.car_tracklet_ctr]
-
 	def true_car_markersPb(self, imdata):
 		marker = Marker()
 		marker.header.frame_id = "velodyne"
@@ -46,7 +43,7 @@ class TrackletViz:
 		marker.type = Marker.CUBE
 		marker.action = marker.ADD
 
-		cur_pose = self.get_trans()
+		cur_pose = self.car_tracklet.trans[self.car_tracklet_ctr]
 		marker.pose.position.x = cur_pose[0]
 		marker.pose.position.y = cur_pose[1]
 		marker.pose.position.z = cur_pose[2]
@@ -71,8 +68,8 @@ class TrackletViz:
 
 def main():
 	rospy.init_node('TrackletViz', anonymous=False)
-
 	tracklet_viz = TrackletViz()
+
 	try:
 		rospy.spin()
 	except:

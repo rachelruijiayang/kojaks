@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="9">
+<tracklets class_id="0" tracking_level="0" version="0">
+	<count>1</count>
+	<item_version>1</item_version> 
+	<item class_id="1" tracking_level="0" version="1">
+		<objectType>Car</objectType>
+		<h>1.524000</h>
+		<w>4.191000</w>
+		<l>4.191000</l>
+		<first_frame>0</first_frame>
+		<poses class_id="2" tracking_level="0" version="0">
+			<count>0</count>
+			<item_version>2</item_version>
+		</poses>
+		<finished>1</finished>
+	</item>
+</tracklets>
+</boost_serialization> 

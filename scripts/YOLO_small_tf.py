@@ -4,19 +4,16 @@ import cv2
 import time
 import sys
 
+
 class YOLO_TF:
-	fromfile = None
-	tofile_img = 'test/output.jpg'
-	tofile_txt = 'test/output.txt'
+	kojaks_path = ""
 	imshow = True
-	filewrite_img = False
-	filewrite_txt = False
 	disp_console = True
-	weights_file = 'weights/YOLO_small.ckpt'
+	weights_file = ''
 	alpha = 0.1
 	threshold = 0.2
 	iou_threshold = 0.5
-	num_class = 20
+	num_class = 5
 	num_box = 2
 	grid_size = 7
 	classes =  ["aeroplane", "bicycle", "bird", "boat", "bottle", "bus", "car", "cat", "chair", "cow", "diningtable", "dog", "horse", "motorbike", "person", "pottedplant", "sheep", "sofa", "train","tvmonitor"]
@@ -24,21 +21,13 @@ class YOLO_TF:
 	w_img = 640
 	h_img = 480
 
-	def __init__(self,argvs = []):
-		self.argv_parser(argvs)
+	def __init__(self, arg_kojaks_path):
+		# For visualizing
+		self.imshow = True
+		self.disp_console = True
 		self.build_networks()
-		if self.fromfile is not None: self.detect_from_file(self.fromfile)
-	def argv_parser(self,argvs):
-		for i in range(1,len(argvs),2):
-			if argvs[i] == '-fromfile' : self.fromfile = argvs[i+1]
-			if argvs[i] == '-tofile_img' : self.tofile_img = argvs[i+1] ; self.filewrite_img = True
-			if argvs[i] == '-tofile_txt' : self.tofile_txt = argvs[i+1] ; self.filewrite_txt = True
-			if argvs[i] == '-imshow' :
-				if argvs[i+1] == '1' :self.imshow = True
-				else : self.imshow = False
-			if argvs[i] == '-disp_console' :
-				if argvs[i+1] == '1' :self.disp_console = True
-				else : self.disp_console = False
+		self.kojaks_path = arg_kojaks_path
+		self.weights_file = arg_kojaks_path+"/utils/YOLO_tensorflow/weights/YOLO_small.ckpt"
 				
 	def build_networks(self):
 		if self.disp_console : print "Building YOLO_small graph..."
@@ -126,31 +115,10 @@ class YOLO_TF:
 		in_dict = {self.x: inputs}
 		net_output = self.sess.run(self.fc_32,feed_dict=in_dict)
 		self.result = self.interpret_output(net_output[0])
+		#self.return_bbox_coords(self.result)
 		self.show_results(img,self.result)
 		strtime = str(time.time()-s)
 		if self.disp_console : print 'Elapsed time : ' + strtime + ' secs' + '\n'
-
-	def detect_from_file(self,filename):
-		if self.disp_console : print 'Detect from ' + filename
-		img = cv2.imread(filename)
-		#img = misc.imread(filename)
-		self.detect_from_cvmat(img)
-
-	def detect_from_crop_sample(self):
-		self.w_img = 640
-		self.h_img = 420
-		f = np.array(open('person_crop.txt','r').readlines(),dtype='float32')
-		inputs = np.zeros((1,448,448,3),dtype='float32')
-		for c in range(3):
-			for y in range(448):
-				for x in range(448):
-					inputs[0,y,x,c] = f[c*448*448+y*448+x]
-
-		in_dict = {self.x: inputs}
-		net_output = self.sess.run(self.fc_32,feed_dict=in_dict)
-		self.boxes, self.probs = self.interpret_output(net_output[0])
-		img = cv2.imread('person.jpg')
-		self.show_results(self.boxes,img)
 
 	def interpret_output(self,output):
 		probs = np.zeros((7,7,2,20))
@@ -202,31 +170,24 @@ class YOLO_TF:
 
 		return result
 
+	def return_bbox_coords(self, output):
+		pass
+
 	def show_results(self,img,results):
 		img_cp = img.copy()
-		if self.filewrite_txt :
-			ftxt = open(self.tofile_txt,'w')
 		for i in range(len(results)):
 			x = int(results[i][1])
 			y = int(results[i][2])
 			w = int(results[i][3])//2
 			h = int(results[i][4])//2
 			if self.disp_console : print '    class : ' + results[i][0] + ' , [x,y,w,h]=[' + str(x) + ',' + str(y) + ',' + str(int(results[i][3])) + ',' + str(int(results[i][4]))+'], Confidence = ' + str(results[i][5])
-			if self.filewrite_img or self.imshow:
+			if self.imshow:
 				cv2.rectangle(img_cp,(x-w,y-h),(x+w,y+h),(0,255,0),2)
 				cv2.rectangle(img_cp,(x-w,y-h-20),(x+w,y-h),(125,125,125),-1)
 				cv2.putText(img_cp,results[i][0] + ' : %.2f' % results[i][5],(x-w+5,y-h-7),cv2.FONT_HERSHEY_SIMPLEX,0.5,(0,0,0),1)
-			if self.filewrite_txt :				
-				ftxt.write(results[i][0] + ',' + str(x) + ',' + str(y) + ',' + str(w) + ',' + str(h)+',' + str(results[i][5]) + '\n')
-		if self.filewrite_img : 
-			if self.disp_console : print '    image file writed : ' + self.tofile_img
-			cv2.imwrite(self.tofile_img,img_cp)			
 		if self.imshow :
 			cv2.imshow('YOLO_small detection',img_cp)
 			cv2.waitKey(1)
-		if self.filewrite_txt : 
-			if self.disp_console : print '    txt file writed : ' + self.tofile_txt
-			ftxt.close()
 
 	def iou(self,box1,box2):
 		tb = min(box1[0]+0.5*box1[2],box2[0]+0.5*box2[2])-max(box1[0]-0.5*box1[2],box2[0]-0.5*box2[2])
@@ -237,14 +198,3 @@ class YOLO_TF:
 
 	def training(self): #TODO add training function!
 		return None
-
-	
-			
-
-def main(argvs):
-	yolo = YOLO_TF(argvs)
-	cv2.waitKey(1000)
-
-
-if __name__=='__main__':	
-	main(sys.argv)

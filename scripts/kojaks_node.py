@@ -66,7 +66,7 @@ class KojaksNode:
 		self.cur_laser = None
 
 	def imageCb(self, data):
-		true_pose = self.get_true_pose()
+		true_pose = self.true_car_tracklet.trans[self.true_car_tracklet_ctr]
 
 		try:
 			cv_image = self.bridge.imgmsg_to_cv2(data, "bgr8")
@@ -87,10 +87,7 @@ class KojaksNode:
 
 		# increment
 		self.true_car_tracklet_ctr += 1
-
-	def get_true_pose(self):
-		return self.true_car_tracklet.trans[self.true_car_tracklet_ctr]
-
+		
 	def gen_car_markers_Pb(self, imdata, gen_pose):
 		marker = Marker()
 		marker.header.frame_id = "velodyne"

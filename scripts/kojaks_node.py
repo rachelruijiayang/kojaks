@@ -29,7 +29,7 @@ bag_set = sys.argv[3]
 bag_fn = sys.argv[4]
 
 truexml_path = kojaks_path + "/true_tracklets/"+bag_set+"/"+bag_fn+"/"+"tracklet_labels.xml"
-genxml_path = kojaks_path + "/genfiles/"+bag_set+"/"+bag_fn+"-xmlgen.xml"
+genxml_path = kojaks_path + "/genfiles/"+bag_set+"/Set"+bag_set+"_"+bag_fn+"-xmlgen.xml"
 
 print("bagfile_path: " + bagfile_path)
 print("kojaks_path: " + kojaks_path)

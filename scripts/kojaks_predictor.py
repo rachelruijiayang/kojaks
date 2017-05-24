@@ -14,9 +14,34 @@ yolo.tofile_txt = "txtfile"
 yolo.filewrite_img = False
 yolo.filewrite_txt = False
 
+def transform2DBbox(bbox_2d):
+	x2 = bbox_2d[0]
+	y2 = bbox_2d[1]
+	w2 = bbox_2d[2]
+	h2 = bbox_2d[3]
+
+	# transform matrix
+	r0c0 = 0
+	r0c1 = 0
+	r0c2 = 0
+	r1c0 = 0
+	r1c1 = 0
+	r1c2 = 0
+	r2c0 = 0
+	r2c1 = 0
+	r2c2 = 0
+	transform_matrix = []
+
+	bbox_3d = 
+
+	return bbox_3d
+
 def run_predictor_on_frame(kojaks_path, cv_image, laser_points, true_pose):
 	#yolo = YOLO_TF(kojaks_path, cv_image)	# move this outside of the callback, to avoid building the network multiple times?
 	#classify_image.image_classify_main(kojaks_path, cv_image)
 	#yolo.detect_from_cvmat(cv_image)
-	yolo.detect_from_cvmat(cv_image)
-	return [10.0, 10.0, -1.0] 
+
+	# image handling
+	bbox_2d_coords = yolo.detect_from_cvmat(cv_image)
+	bbox_3d_coords = transform2DBbox(bbox_2d_coords)
+	return bbox_3d_coords

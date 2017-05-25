@@ -25,8 +25,10 @@ class KojaksPredictor:
 		print(self.frame_ctr)
 		print("true pose of the car is: " + str(true_pose))
 		yolo_result = self.yolo.detect_from_cvmat(cv_image)
-		print("yolo_result is " + str(yolo_result) + "\n") # yolo_result is in the format [['car', 756.87244, 715.84973, 343.4021, 304.45911, 0.80601584911346436]]
+		print("yolo 2d bboxes are " + str(yolo_result) + "\n") # yolo_result is in the format [['car', 756.87244, 715.84973, 343.4021, 304.45911, 0.80601584911346436]]
 		gen_pose = self.transform2DBboxTo3DPoint(yolo_result) # gen_pose is in the format [x, y, z]
+		print("generated pose of the car is: " + str(gen_pose))
+
 		self.frame_ctr +=1
 		return gen_pose
 

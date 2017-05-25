@@ -4,14 +4,10 @@ import cv2
 import time
 import sys
 
-kojaks_path = "/home/ubuntu/udacity_ws/src/kojaks"
+#kojaks_path = "/home/ubuntu/udacity_ws/src/kojaks"
+kojaks_path = "dummydata"
 
 class YOLO_TF:
-	fromfile = None
-	tofile_img = 'test/output.jpg'
-	tofile_txt = 'test/output.txt'
-	filewrite_img = False
-	filewrite_txt = False
 	imshow = False
 	disp_console = True
 	weights_file = kojaks_path + '/utils/YOLO_tensorflow/weights/YOLO_small.ckpt'
@@ -26,22 +22,10 @@ class YOLO_TF:
 	w_img = 640
 	h_img = 480
 
-	def __init__(self,argvs = []):
-		self.argv_parser(argvs)
+	def __init__(self, kojaks_path):
+		self.weights_file = kojaks_path + '/utils/YOLO_tensorflow/weights/YOLO_small.ckpt'
 		self.build_networks()
-	def argv_parser(self,argvs):
-		for i in range(1,len(argvs),2):
-			if argvs[i] == '-fromfile' : self.fromfile = argvs[i+1]
-			print("fromfile: " + self.fromfile)
-			if argvs[i] == '-tofile_img' : self.tofile_img = argvs[i+1] ; self.filewrite_img = True
-			if argvs[i] == '-tofile_txt' : self.tofile_txt = argvs[i+1] ; self.filewrite_txt = True
-			if argvs[i] == '-imshow' :
-				if argvs[i+1] == '1' :self.imshow = True
-				else : self.imshow = False
-			if argvs[i] == '-disp_console' :
-				if argvs[i+1] == '1' :self.disp_console = True
-				else : self.disp_console = False
-				
+	
 	def build_networks(self):
 		if self.disp_console : print "Building YOLO_small graph..."
 		self.x = tf.placeholder('float32',[None,448,448,3])
@@ -128,10 +112,9 @@ class YOLO_TF:
 		in_dict = {self.x: inputs}
 		net_output = self.sess.run(self.fc_32,feed_dict=in_dict)
 		self.result = self.interpret_output(net_output[0])
-		print("self.result is " + str(self.result))
 		self.show_results(img,self.result)
 		strtime = str(time.time()-s)
-		if self.disp_console : print 'Elapsed time : ' + strtime + ' secs' + '\n'
+		if self.disp_console : print 'Elapsed time : ' + strtime + ' secs'
 		return self.result
 
 	def interpret_output(self,output):

@@ -17,7 +17,7 @@ import generate_tracklet as gt
 import parse_tracklet as pt
 
 # Kojaks predictor
-import kojaks_predictor as kp
+from kojaks_predictor import KojaksPredictor
 
 if len(sys.argv) < 6:
 	print("usage: rosrun kojaks kojaks_trainer.py <bagfile_path> <kojaks_path> <bag_set> <bag_filename>")
@@ -35,6 +35,8 @@ print("bagfile_path: " + bagfile_path)
 print("kojaks_path: " + kojaks_path)
 print("truexml_path: " + truexml_path)
 print("genxml_path: " + genxml_path)
+
+kpred_obj = KojaksPredictor(kojaks_path)
 
 def ctrl_c_handler(signal, frame):
 	print("You pressed Ctrl+C!")
@@ -77,7 +79,7 @@ class KojaksNode:
 		
 		# call jordi's opencv function; pass it the cv_image and the correct tracklet
 		# returns an array [tx, ty, tz]
-		gen_pose = kp.run_predictor_on_frame(kojaks_path, cv_image, [], true_pose)
+		gen_pose = kpred_obj.run_predictor_on_frame(cv_image, [], true_pose)
 
 		# append generated tracklet to tracklet list
 		self.gen_tracklet_collection.tracklets[0].poses.append({"tx": gen_pose[0], "ty": gen_pose[1], "tz": gen_pose[2], "rx": 0, "ry": 0, "rz": 0})

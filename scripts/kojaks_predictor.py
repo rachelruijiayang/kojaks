@@ -1,6 +1,7 @@
 #import classify_image
 from YOLO_small_tf import YOLO_TF
 
+frame_ctr = 0
 # kojaks_predictor.py
 # Input: cv image, true obs_car translation relative to velodyne link on capture car
 # Output: Predicted obs_car translation relative to the velodyne link on the capture car
@@ -48,4 +49,7 @@ def run_predictor_on_frame(kojaks_path, cv_image, laser_points, true_pose):
 	yolo_result = yolo.detect_from_cvmat(cv_image)
 	#bbox_3d_coords = transform2DBbox(bbox_2d_coords)
 	#return bbox_3d_coords
+	global frame_ctr
+	print(frame_ctr)
+	frame_ctr+=1
 	return [10,5.3,5.2]

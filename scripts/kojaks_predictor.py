@@ -25,15 +25,18 @@ class KojaksPredictor:
 		print(self.frame_ctr)
 		print("true pose of the car is: " + str(true_pose))
 		yolo_result = self.yolo.detect_from_cvmat(cv_image)
-		print("yolo 2d bboxes are " + str(yolo_result) + "\n") # yolo_result is in the format [['car', 756.87244, 715.84973, 343.4021, 304.45911, 0.80601584911346436]]
+		print("yolo 2d bboxes are " + str(yolo_result)) # yolo_result is in the format [['car', 756.87244, 715.84973, 343.4021, 304.45911, 0.80601584911346436]]
 		gen_pose = self.transform2DBboxTo3DPoint(yolo_result) # gen_pose is in the format [x, y, z]
-		print("generated pose of the car is: " + str(gen_pose))
+		print("generated pose of the car is: " + str(gen_pose) + "\n")
 
 		self.frame_ctr +=1
 		return gen_pose
 
 	# TODO jordi
-	def transform2DBboxTo3DPoint(self, bbox_2d):
+	# bboxes_2d is a LIST of bounding boxes, where each bounding box is in the format ['car', 756.87244, 715.84973, 343.4021, 304.45911, 0.80601584911346436]
+	# e.g. [['car', 441.04303, 627.28674, 119.0832, 46.545364, 0.30567902326583862], ['car', 460.37927, 622.47906, 83.610794, 30.03091, 0.21985459327697754], 
+	#			['car', 459.36804, 612.97845, 126.78255, 57.772087, 0.21014739573001862]]
+	def transform2DBboxTo3DPoint(self, bboxes_2d):
 		# point_3d is the x, y, and z center of the 3d bbox (x = 10, y = 5.3, z = 5.2 in the example below)
 		point_3d = [10,5.3,5.2]
 

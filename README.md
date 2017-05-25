@@ -18,6 +18,8 @@ To run everything (on your laptop):
 
 To run in AWS, run `./aws_kojaks_launch.sh` instead.
 
+YOLO_tensorflow is originally from https://github.com/gliese581gg/YOLO_tensorflow
+
 ======================================
 
 ## Running tracklet_viz.py

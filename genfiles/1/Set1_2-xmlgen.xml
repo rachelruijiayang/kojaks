@@ -11,12 +11,12 @@
 		<l>4.241800</l>
 		<first_frame>0</first_frame>
 		<poses class_id="2" tracking_level="0" version="0">
-			<count>20</count>
+			<count>25</count>
 			<item_version>2</item_version>
 			<item class_id="3" tracking_level="0" version="2">
-				<tx>10.000000</tx>
-				<ty>5.300000</ty>
-				<tz>5.200000</tz>
+				<tx>9.081514</tx>
+				<ty>0.789083</ty>
+				<tz>-0.500000</tz>
 				<rx>0.000000</rx>
 				<ry>0.000000</ry>
 				<rz>0.000000</rz>
@@ -31,9 +31,9 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>10.000000</tx>
-				<ty>5.300000</ty>
-				<tz>5.200000</tz>
+				<tx>9.068688</tx>
+				<ty>0.809767</ty>
+				<tz>-0.500000</tz>
 				<rx>0.000000</rx>
 				<ry>0.000000</ry>
 				<rz>0.000000</rz>
@@ -48,9 +48,9 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>10.000000</tx>
-				<ty>5.300000</ty>
-				<tz>5.200000</tz>
+				<tx>9.081825</tx>
+				<ty>0.788140</ty>
+				<tz>-0.500000</tz>
 				<rx>0.000000</rx>
 				<ry>0.000000</ry>
 				<rz>0.000000</rz>
@@ -65,9 +65,9 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>10.000000</tx>
-				<ty>5.300000</ty>
-				<tz>5.200000</tz>
+				<tx>9.057640</tx>
+				<ty>0.827448</ty>
+				<tz>-0.500000</tz>
 				<rx>0.000000</rx>
 				<ry>0.000000</ry>
 				<rz>0.000000</rz>
@@ -82,9 +82,9 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>10.000000</tx>
-				<ty>5.300000</ty>
-				<tz>5.200000</tz>
+				<tx>9.081243</tx>
+				<ty>0.789210</ty>
+				<tz>-0.500000</tz>
 				<rx>0.000000</rx>
 				<ry>0.000000</ry>
 				<rz>0.000000</rz>
@@ -99,9 +99,9 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>10.000000</tx>
-				<ty>5.300000</ty>
-				<tz>5.200000</tz>
+				<tx>9.085762</tx>
+				<ty>0.783742</ty>
+				<tz>-0.500000</tz>
 				<rx>0.000000</rx>
 				<ry>0.000000</ry>
 				<rz>0.000000</rz>
@@ -116,9 +116,9 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>10.000000</tx>
-				<ty>5.300000</ty>
-				<tz>5.200000</tz>
+				<tx>9.072585</tx>
+				<ty>0.803727</ty>
+				<tz>-0.500000</tz>
 				<rx>0.000000</rx>
 				<ry>0.000000</ry>
 				<rz>0.000000</rz>
@@ -133,9 +133,9 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>10.000000</tx>
-				<ty>5.300000</ty>
-				<tz>5.200000</tz>
+				<tx>9.070481</tx>
+				<ty>0.807180</ty>
+				<tz>-0.500000</tz>
 				<rx>0.000000</rx>
 				<ry>0.000000</ry>
 				<rz>0.000000</rz>
@@ -150,9 +150,9 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>10.000000</tx>
-				<ty>5.300000</ty>
-				<tz>5.200000</tz>
+				<tx>9.093648</tx>
+				<ty>0.771797</ty>
+				<tz>-0.500000</tz>
 				<rx>0.000000</rx>
 				<ry>0.000000</ry>
 				<rz>0.000000</rz>
@@ -167,9 +167,9 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>10.000000</tx>
-				<ty>5.300000</ty>
-				<tz>5.200000</tz>
+				<tx>9.070050</tx>
+				<ty>0.807993</ty>
+				<tz>-0.500000</tz>
 				<rx>0.000000</rx>
 				<ry>0.000000</ry>
 				<rz>0.000000</rz>
@@ -184,9 +184,9 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>10.000000</tx>
-				<ty>5.300000</ty>
-				<tz>5.200000</tz>
+				<tx>9.088247</tx>
+				<ty>0.779258</ty>
+				<tz>-0.500000</tz>
 				<rx>0.000000</rx>
 				<ry>0.000000</ry>
 				<rz>0.000000</rz>
@@ -201,9 +201,9 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>10.000000</tx>
-				<ty>5.300000</ty>
-				<tz>5.200000</tz>
+				<tx>9.071359</tx>
+				<ty>0.805919</ty>
+				<tz>-0.500000</tz>
 				<rx>0.000000</rx>
 				<ry>0.000000</ry>
 				<rz>0.000000</rz>
@@ -218,9 +218,9 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>10.000000</tx>
-				<ty>5.300000</ty>
-				<tz>5.200000</tz>
+				<tx>9.086758</tx>
+				<ty>0.781280</ty>
+				<tz>-0.500000</tz>
 				<rx>0.000000</rx>
 				<ry>0.000000</ry>
 				<rz>0.000000</rz>
@@ -235,9 +235,9 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>10.000000</tx>
-				<ty>5.300000</ty>
-				<tz>5.200000</tz>
+				<tx>9.091675</tx>
+				<ty>0.775243</ty>
+				<tz>-0.500000</tz>
 				<rx>0.000000</rx>
 				<ry>0.000000</ry>
 				<rz>0.000000</rz>
@@ -252,9 +252,9 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>10.000000</tx>
-				<ty>5.300000</ty>
-				<tz>5.200000</tz>
+				<tx>9.081043</tx>
+				<ty>0.789186</ty>
+				<tz>-0.500000</tz>
 				<rx>0.000000</rx>
 				<ry>0.000000</ry>
 				<rz>0.000000</rz>
@@ -269,9 +269,9 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>10.000000</tx>
-				<ty>5.300000</ty>
-				<tz>5.200000</tz>
+				<tx>9.065091</tx>
+				<ty>0.815348</ty>
+				<tz>-0.500000</tz>
 				<rx>0.000000</rx>
 				<ry>0.000000</ry>
 				<rz>0.000000</rz>
@@ -286,9 +286,9 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>10.000000</tx>
-				<ty>5.300000</ty>
-				<tz>5.200000</tz>
+				<tx>9.093004</tx>
+				<ty>0.771844</ty>
+				<tz>-0.500000</tz>
 				<rx>0.000000</rx>
 				<ry>0.000000</ry>
 				<rz>0.000000</rz>
@@ -303,9 +303,9 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>10.000000</tx>
-				<ty>5.300000</ty>
-				<tz>5.200000</tz>
+				<tx>9.080956</tx>
+				<ty>0.791029</ty>
+				<tz>-0.500000</tz>
 				<rx>0.000000</rx>
 				<ry>0.000000</ry>
 				<rz>0.000000</rz>
@@ -320,9 +320,9 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>10.000000</tx>
-				<ty>5.300000</ty>
-				<tz>5.200000</tz>
+				<tx>9.075539</tx>
+				<ty>0.800942</ty>
+				<tz>-0.500000</tz>
 				<rx>0.000000</rx>
 				<ry>0.000000</ry>
 				<rz>0.000000</rz>
@@ -337,9 +337,94 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>10.000000</tx>
-				<ty>5.300000</ty>
-				<tz>5.200000</tz>
+				<tx>9.098496</tx>
+				<ty>0.765276</ty>
+				<tz>-0.500000</tz>
+				<rx>0.000000</rx>
+				<ry>0.000000</ry>
+				<rz>0.000000</rz>
+				<state>1</state>
+				<occlusion>-1</occlusion>
+				<occlusion_kf>-1</occlusion_kf>
+				<truncation>-1</truncation>
+				<amt_occlusion>0.0</amt_occlusion>
+				<amt_occlusion_kf>-1</amt_occlusion_kf>
+				<amt_border_l>0.0</amt_border_l>
+				<amt_border_r>0.0</amt_border_r>
+				<amt_border_kf>-1</amt_border_kf>
+			</item>
+			<item>
+				<tx>9.067672</tx>
+				<ty>0.811539</ty>
+				<tz>-0.500000</tz>
+				<rx>0.000000</rx>
+				<ry>0.000000</ry>
+				<rz>0.000000</rz>
+				<state>1</state>
+				<occlusion>-1</occlusion>
+				<occlusion_kf>-1</occlusion_kf>
+				<truncation>-1</truncation>
+				<amt_occlusion>0.0</amt_occlusion>
+				<amt_occlusion_kf>-1</amt_occlusion_kf>
+				<amt_border_l>0.0</amt_border_l>
+				<amt_border_r>0.0</amt_border_r>
+				<amt_border_kf>-1</amt_border_kf>
+			</item>
+			<item>
+				<tx>9.078874</tx>
+				<ty>0.795275</ty>
+				<tz>-0.500000</tz>
+				<rx>0.000000</rx>
+				<ry>0.000000</ry>
+				<rz>0.000000</rz>
+				<state>1</state>
+				<occlusion>-1</occlusion>
+				<occlusion_kf>-1</occlusion_kf>
+				<truncation>-1</truncation>
+				<amt_occlusion>0.0</amt_occlusion>
+				<amt_occlusion_kf>-1</amt_occlusion_kf>
+				<amt_border_l>0.0</amt_border_l>
+				<amt_border_r>0.0</amt_border_r>
+				<amt_border_kf>-1</amt_border_kf>
+			</item>
+			<item>
+				<tx>9.087326</tx>
+				<ty>0.779464</ty>
+				<tz>-0.500000</tz>
+				<rx>0.000000</rx>
+				<ry>0.000000</ry>
+				<rz>0.000000</rz>
+				<state>1</state>
+				<occlusion>-1</occlusion>
+				<occlusion_kf>-1</occlusion_kf>
+				<truncation>-1</truncation>
+				<amt_occlusion>0.0</amt_occlusion>
+				<amt_occlusion_kf>-1</amt_occlusion_kf>
+				<amt_border_l>0.0</amt_border_l>
+				<amt_border_r>0.0</amt_border_r>
+				<amt_border_kf>-1</amt_border_kf>
+			</item>
+			<item>
+				<tx>9.088529</tx>
+				<ty>0.780029</ty>
+				<tz>-0.500000</tz>
+				<rx>0.000000</rx>
+				<ry>0.000000</ry>
+				<rz>0.000000</rz>
+				<state>1</state>
+				<occlusion>-1</occlusion>
+				<occlusion_kf>-1</occlusion_kf>
+				<truncation>-1</truncation>
+				<amt_occlusion>0.0</amt_occlusion>
+				<amt_occlusion_kf>-1</amt_occlusion_kf>
+				<amt_border_l>0.0</amt_border_l>
+				<amt_border_r>0.0</amt_border_r>
+				<amt_border_kf>-1</amt_border_kf>
+			</item>
+			<item>
+				<tx>9.072568</tx>
+				<ty>0.801995</ty>
+				<tz>-0.500000</tz>
 				<rx>0.000000</rx>
 				<ry>0.000000</ry>
 				<rz>0.000000</rz>

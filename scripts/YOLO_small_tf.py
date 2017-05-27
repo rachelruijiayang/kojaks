@@ -5,7 +5,7 @@ import time
 import sys
 
 #kojaks_path = "/home/ubuntu/udacity_ws/src/kojaks"
-kojaks_path = "dummydata"
+kojaks_path = "/home/racecar/racecar-ws/src/kojaks/kojaks_git"
 
 class YOLO_TF:
 	imshow = False

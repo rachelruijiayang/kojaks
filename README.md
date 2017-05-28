@@ -1,5 +1,11 @@
 # kojaks
 
+Dependencies:
+- Tensorflow
+- Cython
+- ROS Indigo
+- ros-indigo-velodyne
+
 To install:
 - git clone this repo into your ROS workspace's src directory (e.g. udacity_ws/src)
 - Download YOLO_small : https://drive.google.com/file/d/0B2JbaJSrWLpza08yS2FSUnV2dlE/view?usp=sharing and put it in utils/YOLO_tensorflow/weights

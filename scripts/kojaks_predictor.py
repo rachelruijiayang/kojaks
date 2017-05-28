@@ -24,7 +24,6 @@ class KojaksPredictor:
 		#yolo.detect_from_cvmat(cv_image)
 
 		# image handling
-		print(self.frame_ctr)
 		print("true pose of the car is: " + str(true_pose))
 		yolo_result = self.yolo.detect_from_cvmat(cv_image)
 		print("yolo 2d bboxes are " + str(yolo_result)) # yolo_result is in the format [['car', 756.87244, 715.84973, 343.4021, 304.45911, 0.80601584911346436]]
@@ -41,7 +40,6 @@ class KojaksPredictor:
 	def transform2DBboxTo3DPoint(self, bboxes_2d):
 	
 		point_3d = [0,0,0]
-		print(bboxes_2d)
 
 		if len(bboxes_2d)>0:
 			# point_3d is the x, y, and z center of the 3d bbox (x = 10, y = 5.3, z = 5.2 in the example below)
@@ -61,9 +59,8 @@ class KojaksPredictor:
 
 			X_output = current_output[1]/current_output[2]
 			Y_output = current_output[0]/current_output[2]	
-			Z_output = -.5
+			Z_output = 0.33
 
 			point_3d = [X_output,Y_output,Z_output]
-			#point_3d = [10,5.3,5.2]
 
 		return point_3d # [x, y. z]

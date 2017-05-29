@@ -8,6 +8,7 @@ import cv2
 # Messages
 from std_msgs.msg import String
 from sensor_msgs.msg import Image
+from sensor_msgs.msg import PointCloud2
 from visualization_msgs.msg import Marker
 from cv_bridge import CvBridge, CvBridgeError
 import signal
@@ -46,6 +47,8 @@ class KojaksNode:
 	def __init__(self):
 		self.bridge = CvBridge()
 		self.image_sub = rospy.Subscriber("/image_raw", Image, self.imageCb, queue_size = 1000)
+		self.laser_sub = rospy.Subscriber("/velodyne_points", PointCloud2, self.laserCb, queue_size = 1000)
+		# LASER CB
 		self.gen_car_markers_pub = rospy.Publisher("gen_car_markers", Marker, queue_size = 1000)
 
 		# preprocess tracklets
@@ -80,18 +83,17 @@ class KojaksNode:
 	def imageCb(self, data):
 		true_pose = self.true_car_tracklet.trans[self.true_car_tracklet_ctr]
 
-		try:
-			cv_image = self.bridge.imgmsg_to_cv2(data, "bgr8")
-		except CvBridgeError as e:
-			print(e)
-		
-		# call jordi's opencv function; pass it the cv_image and the correct tracklet
-		# returns an array [tx, ty, tz]
 		if (self.cur_image_ctr % 3 == 0):
+			try:
+				cv_image = self.bridge.imgmsg_to_cv2(data, "bgr8")
+			except CvBridgeError as e:			
+				# call jordi's opencv function; pass it the cv_image and the correct tracklet
+				# returns an array [tx, ty, tz]
+				print (e)
 			print("this is frame " + str(self.cur_image_ctr))
 			self.im_gen_obs_pose = kpred_obj.run_predictor_on_frame(cv_image, [], true_pose)
 
-		# append generated tracklet to tracklet list
+		# append generated tracklet to tracklet listtrue_
 		self.gen_tracklet_collection.tracklets[0].poses.append({"tx": self.im_gen_obs_pose[0], "ty": self.im_gen_obs_pose[1], "tz": self.im_gen_obs_pose[2], "rx": 0, "ry": 0, "rz": 0})
 
 		# Publish a marker for the newly predicted pose
@@ -99,9 +101,12 @@ class KojaksNode:
 
 		# increment
 		self.true_car_tracklet_ctr += 1
-
 		self.cur_image_ctr += 1
 	
+	def laserCb(self, laser_msg):
+		self.cur_laser = laser_msg.data
+		kpred_obj.run_laser_predictor(self.cur_laser)
+
 	def fill_marker_base(self):
 		self.marker_base.header.frame_id = "velodyne"
 		self.marker_base.type = self.marker_base.CUBE

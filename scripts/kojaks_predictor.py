@@ -2,6 +2,7 @@
 from YOLO_small_tf import YOLO_TF
 import cv2
 import numpy as np
+import pcl
 
 # kojaks_predictor.py
 # Input: cv image, true obs_car translation relative to velodyne link on capture car
@@ -33,6 +34,9 @@ class KojaksPredictor:
 		self.frame_ctr +=1
 		return gen_pose
 
+	def run_laser_predictor(self, laserdata):
+		pass
+
 	# TODO jordi
 	# bboxes_2d is a LIST of bounding boxes, where each bounding box is in the format ['car', 756.87244, 715.84973, 343.4021, 304.45911, 0.80601584911346436]
 	# e.g. [['car', 441.04303, 627.28674, 119.0832, 46.545364, 0.30567902326583862], ['car', 460.37927, 622.47906, 83.610794, 30.03091, 0.21985459327697754], 
@@ -63,4 +67,4 @@ class KojaksPredictor:
 
 			point_3d = [X_output,Y_output,Z_output]
 
-		return point_3d # [x, y. z]
+		return point_3d

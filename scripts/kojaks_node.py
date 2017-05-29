@@ -9,6 +9,7 @@ import cv2
 from std_msgs.msg import String
 from sensor_msgs.msg import Image
 from sensor_msgs.msg import PointCloud2
+import sensor_msgs.point_cloud2 as pc2
 from visualization_msgs.msg import Marker
 from cv_bridge import CvBridge, CvBridgeError
 import signal
@@ -104,8 +105,10 @@ class KojaksNode:
 		self.cur_image_ctr += 1
 	
 	def laserCb(self, laser_msg):
-		self.cur_laser = laser_msg.data
-		kpred_obj.run_laser_predictor(self.cur_laser)
+		laser_arr = []
+		for point in pc2.read_points(laser_msg, skip_nans=True):
+			laser_arr.append([point[0], point[1], point[2]])
+		kpred_obj.run_laser_predictor(laser_arr)
 
 	def fill_marker_base(self):
 		self.marker_base.header.frame_id = "velodyne"

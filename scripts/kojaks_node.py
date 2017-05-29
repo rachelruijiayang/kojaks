@@ -8,6 +8,7 @@ import cv2
 # Messages
 from std_msgs.msg import String
 from sensor_msgs.msg import Image
+from sensor_msgs.msg import PointCloud2
 from visualization_msgs.msg import Marker
 from cv_bridge import CvBridge, CvBridgeError
 import signal
@@ -46,6 +47,8 @@ class KojaksNode:
 	def __init__(self):
 		self.bridge = CvBridge()
 		self.image_sub = rospy.Subscriber("/image_raw", Image, self.imageCb, queue_size = 1000)
+		self.laser_sub = rospy.Subscriber("/velodyne_points", PointCloud2, self.laserCb, queue_size = 1000)
+		# LASER CB
 		self.gen_car_markers_pub = rospy.Publisher("gen_car_markers", Marker, queue_size = 1000)
 
 		# preprocess tracklets
@@ -63,57 +66,72 @@ class KojaksNode:
 		self.bbox_length = self.true_car_tracklet.size[2]
 		self.bbox_height = self.true_car_tracklet.size[0]
 
-		# sensor state
+		# current sensor data
 		self.cur_image = None
+		self.cur_image_ctr = 0
 		self.cur_laser = None
+		self.cur_laser_ctr = 0
+
+		# current state of obs_car
+		self.im_gen_obs_pose = [0,0,0]
+		self.laser_gen_obs_pose = [0,0,0]
+		self.combo_gen_obs_pose = [0,0,0]
+
+		self.marker_base = Marker()
+		self.fill_marker_base()
 
 	def imageCb(self, data):
 		true_pose = self.true_car_tracklet.trans[self.true_car_tracklet_ctr]
 
-		try:
-			cv_image = self.bridge.imgmsg_to_cv2(data, "bgr8")
-		except CvBridgeError as e:
-			print(e)
-		
-		self.cur_image = cv_image
-		
-		# call jordi's opencv function; pass it the cv_image and the correct tracklet
-		# returns an array [tx, ty, tz]
-		gen_pose = kpred_obj.run_predictor_on_frame(cv_image, [], true_pose)
+		if (self.cur_image_ctr % 3 == 0):
+			try:
+				cv_image = self.bridge.imgmsg_to_cv2(data, "bgr8")
+			except CvBridgeError as e:			
+				# call jordi's opencv function; pass it the cv_image and the correct tracklet
+				# returns an array [tx, ty, tz]
+				print (e)
+			print("this is frame " + str(self.cur_image_ctr))
+			self.im_gen_obs_pose = kpred_obj.run_predictor_on_frame(cv_image, [], true_pose)
 
-		# append generated tracklet to tracklet list
-		self.gen_tracklet_collection.tracklets[0].poses.append({"tx": gen_pose[0], "ty": gen_pose[1], "tz": gen_pose[2], "rx": 0, "ry": 0, "rz": 0})
+		# append generated tracklet to tracklet listtrue_
+		self.gen_tracklet_collection.tracklets[0].poses.append({"tx": self.im_gen_obs_pose[0], "ty": self.im_gen_obs_pose[1], "tz": self.im_gen_obs_pose[2], "rx": 0, "ry": 0, "rz": 0})
 
 		# Publish a marker for the newly predicted pose
-		self.gen_car_markers_Pb(data, gen_pose)
+		self.gen_car_markers_Pb(data)
 
 		# increment
 		self.true_car_tracklet_ctr += 1
-		
-	def gen_car_markers_Pb(self, imdata, gen_pose):
-		marker = Marker()
-		marker.header.frame_id = "velodyne"
-		marker.header.stamp = imdata.header.stamp
-		marker.type = Marker.CUBE
-		marker.action = marker.ADD
+		self.cur_image_ctr += 1
+	
+	def laserCb(self, laser_msg):
+		self.cur_laser = laser_msg.data
+		kpred_obj.run_laser_predictor(self.cur_laser)
 
-		marker.pose.position.x = gen_pose[0]
-		marker.pose.position.y = gen_pose[1]
-		marker.pose.position.z = gen_pose[2]
+	def fill_marker_base(self):
+		self.marker_base.header.frame_id = "velodyne"
+		self.marker_base.type = self.marker_base.CUBE
+		self.marker_base.action = self.marker_base.ADD
 
 		# Hardcode the size of the car
-		marker.scale.x = self.bbox_length
-		marker.scale.y = self.bbox_length # length
-		marker.scale.z = self.bbox_height # height
+		self.marker_base.scale.x = self.bbox_length
+		self.marker_base.scale.y = self.bbox_length # length
+		self.marker_base.scale.z = self.bbox_height # height
 
-		marker.color.r = 0.0
-		marker.color.g = 0.6
-		marker.color.b = 0.6
-		marker.color.a = 0.7
+		self.marker_base.color.r = 0.0
+		self.marker_base.color.g = 0.6
+		self.marker_base.color.b = 0.6
+		self.marker_base.color.a = 0.7
 
-		marker.lifetime = rospy.Duration()
+		self.marker_base.lifetime = rospy.Duration()
 
-		self.gen_car_markers_pub.publish(marker)
+	def gen_car_markers_Pb(self, imdata):
+		self.marker_base.header.stamp = imdata.header.stamp
+
+		self.marker_base.pose.position.x = self.im_gen_obs_pose[0]
+		self.marker_base.pose.position.y = self.im_gen_obs_pose[1]
+		self.marker_base.pose.position.z = self.im_gen_obs_pose[2]
+
+		self.gen_car_markers_pub.publish(self.marker_base)
 
 def main():
 	# ROS node setup

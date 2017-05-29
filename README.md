@@ -2,7 +2,8 @@
 
 Dependencies:
 - Tensorflow
-- Cython
+- Cython (http://cython.readthedocs.io/en/latest/src/quickstart/install.html; install using pip)
+- python-pcl (https://github.com/strawlab/python-pcl)
 - ROS Indigo
 - ros-indigo-velodyne
 

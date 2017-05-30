@@ -4,7 +4,7 @@ options=(--tab --title=Terminal)
 bag_set_arg="3"
 bag_fn_arg="9"
 bagfile_path_arg="/home/ubuntu/Didi-Release-2/Data/$bag_set_arg/$bag_fn_arg.bag"
-every_n_frames_arg="4"
+every_n_frames_arg="7"
 
 sleep_before_bagfile_play="10"
 

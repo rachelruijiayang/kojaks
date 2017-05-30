@@ -19,6 +19,8 @@ if len(sys.argv) < 2:
 print("tracklet_labels.xml file: " + sys.argv[1])
 xml_file = sys.argv[1]
 print(xml_file)
+if "Round1Test" in xml_file:
+	exit(0)
 
 class TrackletViz:
 

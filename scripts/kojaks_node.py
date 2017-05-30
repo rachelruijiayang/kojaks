@@ -31,13 +31,19 @@ bag_set = sys.argv[3]
 bag_fn = sys.argv[4]
 every_n_frames = int(sys.argv[5])
 
-truexml_path = kojaks_path + "/true_tracklets/"+bag_set+"/"+bag_fn+"/"+"tracklet_labels.xml"
+testing_mode = False
+if bag_set == "Round1Test":
+	testing_mode = True
+
+if testing_mode == False:
+	truexml_path = kojaks_path + "/true_tracklets/"+bag_set+"/"+bag_fn+"/"+"tracklet_labels.xml"
 genxml_path = kojaks_path + "/genfiles/"+bag_set+"/Set"+bag_set+"_"+bag_fn+"-xmlgen.xml"
 training_fn = kojaks_path + "/training_pairs/"+bag_set+"/"+bag_fn+"-training.csv"
 
 print("bagfile_path: " + bagfile_path)
 print("kojaks_path: " + kojaks_path)
-print("truexml_path: " + truexml_path)
+if testing_mode == False:
+	print("truexml_path: " + truexml_path)
 print("genxml_path: " + genxml_path)
 print("training_fn: " + training_fn)
 
@@ -54,21 +60,22 @@ class KojaksNode:
 		self.laser_sub = rospy.Subscriber("/velodyne_points", PointCloud2, self.laserCb, queue_size = 1000)
 		# LASER CB
 		self.gen_car_markers_pub = rospy.Publisher("gen_car_markers", Marker, queue_size = 1000)
-
+		self.true_car_tracklet_size = [1.397, 4.5212, 4.5212]
 		# preprocess tracklets
-		self.true_tracklet_collection = pt.parse_xml(truexml_path)
-		self.true_car_tracklet = self.true_tracklet_collection[0]
-		self.true_car_tracklet_ctr = 0
+		if testing_mode == False:
+			self.true_tracklet_collection = pt.parse_xml(truexml_path)
+			self.true_car_tracklet = self.true_tracklet_collection[0]
+			self.true_car_tracklet_ctr = 0
 
 		# Set up tracklet generator
 		self.gen_tracklet_collection = gt.TrackletCollection()
-		self.gen_car_tracklet = gt.Tracklet(object_type="Car", l=self.true_car_tracklet.size[2], 
-			w=self.true_car_tracklet.size[2], h=self.true_car_tracklet.size[0], first_frame=0)
+		self.gen_car_tracklet = gt.Tracklet(object_type="Car", l=self.true_car_tracklet_size[2], 
+			w=self.true_car_tracklet_size[2], h=self.true_car_tracklet_size[0], first_frame=0)
 		self.gen_tracklet_collection.tracklets.append(self.gen_car_tracklet)
 
 		# bbox settings
-		self.bbox_length = self.true_car_tracklet.size[2]
-		self.bbox_height = self.true_car_tracklet.size[0]
+		self.bbox_length = self.true_car_tracklet_size[2]
+		self.bbox_height = self.true_car_tracklet_size[0]
 
 		# current sensor data
 		self.cur_image = None
@@ -85,7 +92,9 @@ class KojaksNode:
 		self.fill_marker_base()
 
 	def imageCb(self, data):
-		true_pose = self.true_car_tracklet.trans[self.true_car_tracklet_ctr]
+		true_pose = []
+		if testing_mode == False:
+			true_pose = self.true_car_tracklet.trans[self.true_car_tracklet_ctr]
 
 		if (self.cur_image_ctr % every_n_frames == 0):
 			try:
@@ -104,7 +113,8 @@ class KojaksNode:
 		self.gen_car_markers_Pb(data)
 
 		# increment
-		self.true_car_tracklet_ctr += 1
+		if testing_mode == False:
+			self.true_car_tracklet_ctr += 1
 		self.cur_image_ctr += 1
 	
 	def laserCb(self, laser_msg):
@@ -156,8 +166,9 @@ def main():
 	try:
 		rospy.spin()
 	except:
-		print("Writing training data to " + training_fn)
-		kpred_obj.writeTrainingPairsToFile(training_fn)
+		if testing_mode == False:
+			print("Writing training data to " + training_fn)
+			kpred_obj.writeTrainingPairsToFile(training_fn)
 		print("Writing tracklet collection to " + genxml_path)
 		kojaks_node.gen_tracklet_collection.write_xml(genxml_path)
 	finally:

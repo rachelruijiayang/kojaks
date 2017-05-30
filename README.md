@@ -7,9 +7,7 @@ Dependencies:
   - install with ```sudo python setup.py clean
 sudo make clean
 sudo make all
-sudo python setup.py install
-
-```
+sudo python setup.py install```
 - ROS Indigo
 - ros-indigo-velodyne
 

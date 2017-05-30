@@ -21,14 +21,15 @@ import parse_tracklet as pt
 # Kojaks predictor
 from kojaks_predictor import KojaksPredictor
 
-if len(sys.argv) < 7:
-	print("usage: rosrun kojaks kojaks_trainer.py <bagfile_path> <kojaks_path> <bag_set> <bag_filename> <training_fn>")
+if len(sys.argv) < 6:
+	print("usage: rosrun kojaks kojaks_trainer.py <bagfile_path> <kojaks_path> <bag_set> <bag_filename> <frame_skip>")
 	exit(0)
 
 bagfile_path = sys.argv[1]
 kojaks_path = sys.argv[2] # kojaks_path stores the absolute path
 bag_set = sys.argv[3]
 bag_fn = sys.argv[4]
+every_n_frames = int(sys.argv[5])
 
 truexml_path = kojaks_path + "/true_tracklets/"+bag_set+"/"+bag_fn+"/"+"tracklet_labels.xml"
 genxml_path = kojaks_path + "/genfiles/"+bag_set+"/Set"+bag_set+"_"+bag_fn+"-xmlgen.xml"
@@ -86,7 +87,7 @@ class KojaksNode:
 	def imageCb(self, data):
 		true_pose = self.true_car_tracklet.trans[self.true_car_tracklet_ctr]
 
-		if (self.cur_image_ctr % 3 == 0):
+		if (self.cur_image_ctr % every_n_frames == 0):
 			try:
 				cv_image = self.bridge.imgmsg_to_cv2(data, "bgr8")
 			except CvBridgeError as e:			

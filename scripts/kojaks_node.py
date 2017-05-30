@@ -21,8 +21,8 @@ import parse_tracklet as pt
 # Kojaks predictor
 from kojaks_predictor import KojaksPredictor
 
-if len(sys.argv) < 6:
-	print("usage: rosrun kojaks kojaks_trainer.py <bagfile_path> <kojaks_path> <bag_set> <bag_filename>")
+if len(sys.argv) < 7:
+	print("usage: rosrun kojaks kojaks_trainer.py <bagfile_path> <kojaks_path> <bag_set> <bag_filename> <training_fn>")
 	exit(0)
 
 bagfile_path = sys.argv[1]
@@ -32,11 +32,13 @@ bag_fn = sys.argv[4]
 
 truexml_path = kojaks_path + "/true_tracklets/"+bag_set+"/"+bag_fn+"/"+"tracklet_labels.xml"
 genxml_path = kojaks_path + "/genfiles/"+bag_set+"/Set"+bag_set+"_"+bag_fn+"-xmlgen.xml"
+training_fn = kojaks_path + "/training_pairs/"+bag_set+"/"+bag_fn+"-training.csv"
 
 print("bagfile_path: " + bagfile_path)
 print("kojaks_path: " + kojaks_path)
 print("truexml_path: " + truexml_path)
 print("genxml_path: " + genxml_path)
+print("training_fn: " + training_fn)
 
 kpred_obj = KojaksPredictor(kojaks_path)
 
@@ -130,6 +132,15 @@ class KojaksNode:
 	def gen_car_markers_Pb(self, imdata):
 		self.marker_base.header.stamp = imdata.header.stamp
 
+		if(self.im_gen_obs_pose == [0,0,0]):
+			self.marker_base.scale.x = 0
+			self.marker_base.scale.y = 0 # length
+			self.marker_base.scale.z = 0 # height
+		else:
+			self.marker_base.scale.x = self.bbox_length
+			self.marker_base.scale.y = self.bbox_length # length
+			self.marker_base.scale.z = self.bbox_height # height
+
 		self.marker_base.pose.position.x = self.im_gen_obs_pose[0]
 		self.marker_base.pose.position.y = self.im_gen_obs_pose[1]
 		self.marker_base.pose.position.z = self.im_gen_obs_pose[2]
@@ -144,6 +155,8 @@ def main():
 	try:
 		rospy.spin()
 	except:
+		print("Writing training data to " + training_fn)
+		kpred_obj.writeTrainingPairsToFile(training_fn)
 		print("Writing tracklet collection to " + genxml_path)
 		kojaks_node.gen_tracklet_collection.write_xml(genxml_path)
 	finally:

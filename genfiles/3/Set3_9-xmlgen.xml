@@ -11,7 +11,7 @@
 		<l>4.521200</l>
 		<first_frame>0</first_frame>
 		<poses class_id="2" tracking_level="0" version="0">
-			<count>19</count>
+			<count>18</count>
 			<item_version>2</item_version>
 			<item class_id="3" tracking_level="0" version="2">
 				<tx>9.452853</tx>
@@ -218,8 +218,8 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.453224</tx>
-				<ty>0.057491</ty>
+				<tx>9.453453</tx>
+				<ty>0.058726</ty>
 				<tz>0.330000</tz>
 				<rx>0.000000</rx>
 				<ry>0.000000</ry>
@@ -235,8 +235,8 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.453224</tx>
-				<ty>0.057491</ty>
+				<tx>9.453453</tx>
+				<ty>0.058726</ty>
 				<tz>0.330000</tz>
 				<rx>0.000000</rx>
 				<ry>0.000000</ry>
@@ -252,8 +252,8 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.453224</tx>
-				<ty>0.057491</ty>
+				<tx>9.453453</tx>
+				<ty>0.058726</ty>
 				<tz>0.330000</tz>
 				<rx>0.000000</rx>
 				<ry>0.000000</ry>
@@ -269,8 +269,8 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.453224</tx>
-				<ty>0.057491</ty>
+				<tx>9.401938</tx>
+				<ty>0.058848</ty>
 				<tz>0.330000</tz>
 				<rx>0.000000</rx>
 				<ry>0.000000</ry>
@@ -286,8 +286,8 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.453224</tx>
-				<ty>0.057491</ty>
+				<tx>9.401938</tx>
+				<ty>0.058848</ty>
 				<tz>0.330000</tz>
 				<rx>0.000000</rx>
 				<ry>0.000000</ry>
@@ -303,25 +303,8 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.453224</tx>
-				<ty>0.057491</ty>
-				<tz>0.330000</tz>
-				<rx>0.000000</rx>
-				<ry>0.000000</ry>
-				<rz>0.000000</rz>
-				<state>1</state>
-				<occlusion>-1</occlusion>
-				<occlusion_kf>-1</occlusion_kf>
-				<truncation>-1</truncation>
-				<amt_occlusion>0.0</amt_occlusion>
-				<amt_occlusion_kf>-1</amt_occlusion_kf>
-				<amt_border_l>0.0</amt_border_l>
-				<amt_border_r>0.0</amt_border_r>
-				<amt_border_kf>-1</amt_border_kf>
-			</item>
-			<item>
-				<tx>9.453224</tx>
-				<ty>0.057491</ty>
+				<tx>9.401938</tx>
+				<ty>0.058848</ty>
 				<tz>0.330000</tz>
 				<rx>0.000000</rx>
 				<ry>0.000000</ry>

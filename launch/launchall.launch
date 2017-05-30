@@ -1,6 +1,7 @@
 <launch>
 	<arg name="bag_set" default="2" />
 	<arg name="bag_fn" default="11_f" />
+	<arg name="training_filename" default="" />
 
 	<arg name="bagfile_path" default="/home/ruijia/udacity_competition/Didi-Release-2/Data/$(arg bag_set)/$(arg bag_fn).bag" />
 	

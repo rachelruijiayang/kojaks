@@ -4,10 +4,13 @@ Dependencies:
 - Tensorflow
 - Cython (http://cython.readthedocs.io/en/latest/src/quickstart/install.html; install using pip)
 - python-pcl (https://github.com/strawlab/python-pcl)
-  - install with ```sudo python setup.py clean
+  - install with 
+```
+sudo python setup.py clean
 sudo make clean
 sudo make all
-sudo python setup.py install```
+sudo python setup.py install
+```
 - ROS Indigo
 - ros-indigo-velodyne
 

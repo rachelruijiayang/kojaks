@@ -32,13 +32,13 @@ xs_true = 7.9875
 ys_true = 0.280274
 zs_true = -0.6
 
-bottom_left_x_true = xs_true - car_l/2
+bottom_left_x_true = xs_true + car_l/2
 bottom_left_y_true = ys_true - car_l/2
-bottom_right_x_true = xs_true + car_l/2
+bottom_right_x_true = xs_true - car_l/2
 bottom_right_y_true = ys_true - car_l/2
-top_left_x_true = xs_true - car_l/2
+top_left_x_true = xs_true + car_l/2
 top_left_y_true = ys_true + car_l/2
-top_right_x_true = xs_true + car_l/2
+top_right_x_true = xs_true - car_l/2
 top_right_y_true = ys_true + car_l/2
 
 src = np.float32([[top_left_x,top_left_y],[top_right_x,top_right_y],[bottom_left_x,bottom_left_y],[bottom_right_x,bottom_right_y]])
@@ -53,7 +53,7 @@ class KojaksPredictor:
 		self.kojaks_path = kojaks_path_arg 
 		self.yolo = YOLO_TF(self.kojaks_path)
 		self.yolo.imshow = False
-		self.prev_pose = [0,0,0]
+		self.prev_pose = [9.215063, 3.448629,-0.527621]
 		self.training_pairs = [] # a list of [bbox_coords, true_pose] pairs
 
 	def run_predictor_on_frame(self, cv_image, laser_points, true_pose):

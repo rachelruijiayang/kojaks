@@ -20,17 +20,23 @@ bottom_left_x = xs - ws/2
 bottom_left_y = ys + hs/2
 bottom_right_x = xs + ws/2
 bottom_right_y = ys + hs/2
-top_left_x = xs - ws/2
-top_left_y = ys - hs/2
-top_right_x = xs + ws/2
-top_right_y = ys - hs/2
+#top_left_x = xs - ws/2
+#top_left_y = ys - hs/2
+#top_right_x = xs + ws/2
+#top_right_y = ys - hs/2
+
+#trapezoid shape
+top_left_x = bottom_left_x + ws/10
+top_right_x = bottom_right_x - ws/10
+top_left_y = bottom_left_y + hs/10
+top_right_x = bottom_right_y + hs/10
 
 car_h = 1.397
-car_l = 4.5212
+car_l = 3
 
 xs_true = 7.9875
 ys_true = 0.280274
-zs_true = -0.6
+zs_true = -0.7
 
 bottom_left_x_true = xs_true - car_l/2
 bottom_left_y_true = ys_true + car_l/2

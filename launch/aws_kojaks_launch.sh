@@ -1,6 +1,9 @@
 #!/bin/bash
 options=(--tab --title=Terminal)
 
+bag_set_arg="Round1Test"
+bag_fn_arg="19_f2"
+bagfile_path_arg="/home/ubuntu/Didi-Release-2/Data/$bag_set_arg/$bag_fn_arg.bag"
 write_xml_arg="no"
 write_training_arg="no"
 every_n_frames_arg="7"

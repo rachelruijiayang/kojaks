@@ -95,10 +95,10 @@ class KojaksPredictor:
 	# e.g. [['car', 441.04303, 627.28674, 119.0832, 46.545364, 0.30567902326583862], ['car', 460.37927, 622.47906, 83.610794, 30.03091, 0.21985459327697754], 
 	#			['car', 459.36804, 612.97845, 126.78255, 57.772087, 0.21014739573001862]]
 	def transform2DBboxTo3DPoint(self, bboxes_2d):
-		"""
 		point_3d = self.prev_pose
 
 		if len(bboxes_2d)>0:
+		"""
 			# point_3d is the x, y, and z center of the 3d bbox (x = 10, y = 5.3, z = 5.2 in the example below)
 
 #			src = np.float32([[672.37,701.57],[1060.75,665.86],[757.73,715.97],[80.73,714.77]])

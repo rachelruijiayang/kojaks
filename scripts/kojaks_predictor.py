@@ -17,7 +17,7 @@ class KojaksPredictor:
 		self.frame_ctr = 0
 		self.kojaks_path = kojaks_path_arg 
 		self.yolo = YOLO_TF(self.kojaks_path)
-		self.yolo.imshow = True
+		self.yolo.imshow = False
 		self.prev_pose = [0,0,0]
 		self.training_pairs = [] # a list of [bbox_coords, true_pose] pairs
 

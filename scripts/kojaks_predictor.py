@@ -54,6 +54,7 @@ class KojaksPredictor:
 		self.yolo = YOLO_TF(self.kojaks_path)
 		self.yolo.imshow = False
 		self.prev_pose = [9.215063, 3.448629,-0.527621]
+		self.default_pose = [-1.215063, 3.448629,-0.527621]
 		self.training_pairs = [] # a list of [bbox_coords, true_pose] pairs
 
 	def run_predictor_on_frame(self, cv_image, laser_points, true_pose):
@@ -95,7 +96,8 @@ class KojaksPredictor:
 	# e.g. [['car', 441.04303, 627.28674, 119.0832, 46.545364, 0.30567902326583862], ['car', 460.37927, 622.47906, 83.610794, 30.03091, 0.21985459327697754], 
 	#			['car', 459.36804, 612.97845, 126.78255, 57.772087, 0.21014739573001862]]
 	def transform2DBboxTo3DPoint(self, bboxes_2d):
-		point_3d = self.prev_pose
+		#point_3d = self.prev_pose
+		point_3d = self.default_pose
 
 		if len(bboxes_2d)>0:
 			"""

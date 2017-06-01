@@ -11,10 +11,10 @@
 		<l>4.521200</l>
 		<first_frame>0</first_frame>
 		<poses class_id="2" tracking_level="0" version="0">
-			<count>122</count>
+			<count>127</count>
 			<item_version>2</item_version>
 			<item class_id="3" tracking_level="0" version="2">
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -31,7 +31,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -48,7 +48,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -65,7 +65,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -82,7 +82,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -99,7 +99,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -116,7 +116,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -133,7 +133,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -150,7 +150,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -167,7 +167,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -184,7 +184,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -201,7 +201,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -218,7 +218,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -235,7 +235,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -252,7 +252,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -269,7 +269,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -286,7 +286,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -303,7 +303,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -320,7 +320,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -337,7 +337,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -354,7 +354,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -371,7 +371,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -388,7 +388,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -405,7 +405,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -422,7 +422,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -439,7 +439,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -456,7 +456,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -473,7 +473,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -490,7 +490,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -507,7 +507,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -524,7 +524,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -541,7 +541,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -558,7 +558,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -575,7 +575,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -592,7 +592,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -609,7 +609,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -626,7 +626,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -643,7 +643,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -660,7 +660,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -677,7 +677,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -694,7 +694,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -711,7 +711,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -728,7 +728,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -745,7 +745,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -762,7 +762,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -779,7 +779,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -796,7 +796,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -813,7 +813,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -830,7 +830,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -847,7 +847,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -864,7 +864,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -881,7 +881,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -898,7 +898,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -915,7 +915,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -932,7 +932,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -949,7 +949,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -966,7 +966,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -983,7 +983,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1000,7 +1000,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1017,7 +1017,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1034,7 +1034,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1051,7 +1051,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1068,7 +1068,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1085,7 +1085,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1102,7 +1102,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1119,7 +1119,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1136,7 +1136,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1153,7 +1153,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1170,7 +1170,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1187,7 +1187,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1204,7 +1204,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1221,7 +1221,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1238,7 +1238,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1255,7 +1255,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1272,7 +1272,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1289,7 +1289,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1306,7 +1306,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1323,7 +1323,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1340,7 +1340,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1357,7 +1357,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1374,7 +1374,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1391,7 +1391,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1408,7 +1408,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1425,7 +1425,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1442,7 +1442,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1459,7 +1459,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1476,7 +1476,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1493,7 +1493,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1510,7 +1510,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1527,7 +1527,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1544,7 +1544,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1561,7 +1561,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1578,7 +1578,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1595,7 +1595,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1612,7 +1612,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1629,7 +1629,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1646,7 +1646,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1663,7 +1663,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1680,7 +1680,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1697,7 +1697,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1714,7 +1714,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1731,7 +1731,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1748,7 +1748,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1765,7 +1765,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1782,7 +1782,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1799,7 +1799,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1816,7 +1816,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1833,7 +1833,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1850,7 +1850,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1867,7 +1867,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1884,7 +1884,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1901,7 +1901,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1918,7 +1918,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1935,7 +1935,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1952,7 +1952,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1969,7 +1969,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -1986,7 +1986,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -2003,7 +2003,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -2020,7 +2020,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -2037,7 +2037,7 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>9.215063</tx>
+				<tx>-1.215063</tx>
 				<ty>3.448629</ty>
 				<tz>-0.527621</tz>
 				<rx>0.000000</rx>
@@ -2054,9 +2054,9 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>5.227252</tx>
-				<ty>12.052794</ty>
-				<tz>0.330000</tz>
+				<tx>-1.980326</tx>
+				<ty>5.726900</ty>
+				<tz>-0.600000</tz>
 				<rx>0.000000</rx>
 				<ry>0.000000</ry>
 				<rz>0.000000</rz>
@@ -2071,9 +2071,94 @@
 				<amt_border_kf>-1</amt_border_kf>
 			</item>
 			<item>
-				<tx>5.227252</tx>
-				<ty>12.052794</ty>
-				<tz>0.330000</tz>
+				<tx>-1.980326</tx>
+				<ty>5.726900</ty>
+				<tz>-0.600000</tz>
+				<rx>0.000000</rx>
+				<ry>0.000000</ry>
+				<rz>0.000000</rz>
+				<state>1</state>
+				<occlusion>-1</occlusion>
+				<occlusion_kf>-1</occlusion_kf>
+				<truncation>-1</truncation>
+				<amt_occlusion>0.0</amt_occlusion>
+				<amt_occlusion_kf>-1</amt_occlusion_kf>
+				<amt_border_l>0.0</amt_border_l>
+				<amt_border_r>0.0</amt_border_r>
+				<amt_border_kf>-1</amt_border_kf>
+			</item>
+			<item>
+				<tx>-1.980326</tx>
+				<ty>5.726900</ty>
+				<tz>-0.600000</tz>
+				<rx>0.000000</rx>
+				<ry>0.000000</ry>
+				<rz>0.000000</rz>
+				<state>1</state>
+				<occlusion>-1</occlusion>
+				<occlusion_kf>-1</occlusion_kf>
+				<truncation>-1</truncation>
+				<amt_occlusion>0.0</amt_occlusion>
+				<amt_occlusion_kf>-1</amt_occlusion_kf>
+				<amt_border_l>0.0</amt_border_l>
+				<amt_border_r>0.0</amt_border_r>
+				<amt_border_kf>-1</amt_border_kf>
+			</item>
+			<item>
+				<tx>-1.980326</tx>
+				<ty>5.726900</ty>
+				<tz>-0.600000</tz>
+				<rx>0.000000</rx>
+				<ry>0.000000</ry>
+				<rz>0.000000</rz>
+				<state>1</state>
+				<occlusion>-1</occlusion>
+				<occlusion_kf>-1</occlusion_kf>
+				<truncation>-1</truncation>
+				<amt_occlusion>0.0</amt_occlusion>
+				<amt_occlusion_kf>-1</amt_occlusion_kf>
+				<amt_border_l>0.0</amt_border_l>
+				<amt_border_r>0.0</amt_border_r>
+				<amt_border_kf>-1</amt_border_kf>
+			</item>
+			<item>
+				<tx>-1.980326</tx>
+				<ty>5.726900</ty>
+				<tz>-0.600000</tz>
+				<rx>0.000000</rx>
+				<ry>0.000000</ry>
+				<rz>0.000000</rz>
+				<state>1</state>
+				<occlusion>-1</occlusion>
+				<occlusion_kf>-1</occlusion_kf>
+				<truncation>-1</truncation>
+				<amt_occlusion>0.0</amt_occlusion>
+				<amt_occlusion_kf>-1</amt_occlusion_kf>
+				<amt_border_l>0.0</amt_border_l>
+				<amt_border_r>0.0</amt_border_r>
+				<amt_border_kf>-1</amt_border_kf>
+			</item>
+			<item>
+				<tx>-1.980326</tx>
+				<ty>5.726900</ty>
+				<tz>-0.600000</tz>
+				<rx>0.000000</rx>
+				<ry>0.000000</ry>
+				<rz>0.000000</rz>
+				<state>1</state>
+				<occlusion>-1</occlusion>
+				<occlusion_kf>-1</occlusion_kf>
+				<truncation>-1</truncation>
+				<amt_occlusion>0.0</amt_occlusion>
+				<amt_occlusion_kf>-1</amt_occlusion_kf>
+				<amt_border_l>0.0</amt_border_l>
+				<amt_border_r>0.0</amt_border_r>
+				<amt_border_kf>-1</amt_border_kf>
+			</item>
+			<item>
+				<tx>-1.980326</tx>
+				<ty>5.726900</ty>
+				<tz>-0.600000</tz>
 				<rx>0.000000</rx>
 				<ry>0.000000</ry>
 				<rz>0.000000</rz>

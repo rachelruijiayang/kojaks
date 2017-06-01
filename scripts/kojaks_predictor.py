@@ -35,7 +35,7 @@ class KojaksPredictor:
 		if yolo_result != [] and true_pose != [] and yolo_result[0][0] == 'car':
 			self.training_pairs.append([yolo_result[0], true_pose])
 		gen_pose = self.transform2DBboxTo3DPoint(yolo_result) # gen_pose is in the format [x, y, z]
-		#print("generated pose of the car is: " + str(gen_pose) + "\n")
+		print("generated pose of the car is: " + str(gen_pose) + "\n")
 
 		self.frame_ctr +=1
 		return gen_pose

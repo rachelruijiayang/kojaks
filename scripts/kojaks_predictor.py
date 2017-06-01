@@ -20,9 +20,9 @@ bottom_left_x = xs - ws/2
 bottom_left_y = ys + hs/2
 bottom_right_x = xs + ws/2
 bottom_right_y = ys + hs/2
-top_left_x = xs + ws/2
+top_left_x = xs - ws/2
 top_left_y = ys - hs/2
-top_right_x = xs - ws/2
+top_right_x = xs + ws/2
 top_right_y = ys - hs/2
 
 car_h = 1.397
@@ -137,7 +137,7 @@ class KojaksPredictor:
 
 			X_output = current_output[1]/current_output[2]
 			Y_output = current_output[0]/current_output[2]	
-			Z_output = 0.33
+			Z_output = zs_true
 
 			point_3d = [X_output,Y_output,Z_output]
 			self.prev_pose = point_3d

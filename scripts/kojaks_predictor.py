@@ -98,7 +98,7 @@ class KojaksPredictor:
 		point_3d = self.prev_pose
 
 		if len(bboxes_2d)>0:
-		"""
+			"""
 			# point_3d is the x, y, and z center of the 3d bbox (x = 10, y = 5.3, z = 5.2 in the example below)
 
 #			src = np.float32([[672.37,701.57],[1060.75,665.86],[757.73,715.97],[80.73,714.77]])
@@ -126,7 +126,7 @@ class KojaksPredictor:
 
 			point_3d = [X_output,Y_output,Z_output]
 			self.prev_pose = point_3d
-		"""
+			"""
 
 		currentX = np.float32(bboxes_2d[0][1])
 		currentY = np.float32(bboxes_2d[0][2])	

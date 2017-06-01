@@ -114,7 +114,7 @@ class YOLO_TF:
 		self.result = self.interpret_output(net_output[0])
 		self.show_results(img,self.result)
 		strtime = str(time.time()-s)
-		if self.disp_console : print 'Elapsed time : ' + strtime + ' secs'
+		#if self.disp_console : print 'Elapsed time : ' + strtime + ' secs'
 		return self.result
 
 	def interpret_output(self,output):

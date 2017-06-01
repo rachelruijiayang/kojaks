@@ -30,10 +30,19 @@ kojaks_path = sys.argv[2] # kojaks_path stores the absolute path
 bag_set = sys.argv[3]
 bag_fn = sys.argv[4]
 every_n_frames = int(sys.argv[5])
+write_xml = sys.argv[6]
+write_training = sys.argv[7]
 
 testing_mode = False
+write_xml_mode = False
+write_training_mode = False
+
 if bag_set == "Round1Test":
 	testing_mode = True
+if write_xml == "-x":
+	write_xml_mode = True
+if write_training == "-t":
+	write_training_mode = True
 
 if testing_mode == False:
 	truexml_path = kojaks_path + "/true_tracklets/"+bag_set+"/"+bag_fn+"/"+"tracklet_labels.xml"
@@ -103,7 +112,7 @@ class KojaksNode:
 				# call jordi's opencv function; pass it the cv_image and the correct tracklet
 				# returns an array [tx, ty, tz]
 				print (e)
-			print("this is frame " + str(self.cur_image_ctr))
+			#print("this is frame " + str(self.cur_image_ctr))
 			self.im_gen_obs_pose = kpred_obj.run_predictor_on_frame(cv_image, [], true_pose)
 
 		# append generated tracklet to tracklet listtrue_
@@ -166,11 +175,12 @@ def main():
 	try:
 		rospy.spin()
 	except:
-		if testing_mode == False:
+		if testing_mode == False and write_training_mode == True:
 			print("Writing training data to " + training_fn)
 			kpred_obj.writeTrainingPairsToFile(training_fn)
-		print("Writing tracklet collection to " + genxml_path)
-		kojaks_node.gen_tracklet_collection.write_xml(genxml_path)
+		if write_xml_mode == True:
+			print("Writing tracklet collection to " + genxml_path)
+			kojaks_node.gen_tracklet_collection.write_xml(genxml_path)
 	finally:
 		cv2.destroyAllWindows()
 		print("Shutting down")

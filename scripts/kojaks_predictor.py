@@ -128,19 +128,18 @@ class KojaksPredictor:
 			self.prev_pose = point_3d
 			"""
 
-		currentX = np.float32(bboxes_2d[0][1])
-		currentY = np.float32(bboxes_2d[0][2])	
+			currentX = np.float32(bboxes_2d[0][1])
+			currentY = np.float32(bboxes_2d[0][2])	
 
-		current_input = np.array([currentX,currentY,1])
+			current_input = np.array([currentX,currentY,1])
 
-		current_output = np.dot(M,current_input)
+			current_output = np.dot(M,current_input)
 
-		X_output = current_output[1]/current_output[2]
-		Y_output = current_output[0]/current_output[2]	
-		Z_output = 0.33
+			X_output = current_output[1]/current_output[2]
+			Y_output = current_output[0]/current_output[2]	
+			Z_output = 0.33
 
-		point_3d = [X_output,Y_output,Z_output]
-		self.prev_pose = point_3d
-
+			point_3d = [X_output,Y_output,Z_output]
+			self.prev_pose = point_3d
 
 		return point_3d

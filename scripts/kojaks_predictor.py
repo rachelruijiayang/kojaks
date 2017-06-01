@@ -33,7 +33,7 @@ class KojaksPredictor:
 			if true_pose != []:
 				print("true pose of the car is: " + str(true_pose))
 			print("yolo 2d bboxes are " + str(yolo_result)) # yolo_result is in the format [['car', 756.87244, 715.84973, 343.4021, 304.45911, 0.80601584911346436]]
-		else if yolo_result != []:
+		elif yolo_result != []:
 			print(yolo_result[0][5])
 		if yolo_result != [] and true_pose != [] and yolo_result[0][0] == 'car':
 			self.training_pairs.append([yolo_result[0], true_pose])

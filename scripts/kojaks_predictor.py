@@ -36,7 +36,7 @@ car_l = 3
 
 xs_true = 7.9875
 ys_true = 0.280274
-zs_true = -0.7
+zs_true = -0.79
 
 bottom_left_x_true = xs_true - car_l/2
 bottom_left_y_true = ys_true + car_l/2
@@ -143,8 +143,8 @@ class KojaksPredictor:
 
 			current_output = np.dot(M,current_input)
 
-			X_output = current_output[0]/current_output[2]*-1*2
-			Y_output = current_output[1]/current_output[2]*-1*2
+			X_output = current_output[0]/current_output[2]
+			Y_output = current_output[1]/current_output[2]
 			print("curr output 2: " + str(current_output[2]))
 			Z_output = zs_true
 

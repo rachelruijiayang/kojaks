@@ -143,8 +143,11 @@ class KojaksPredictor:
 
 			current_output = np.dot(M,current_input)
 
-			X_output = current_output[1]/current_output[2]
-			Y_output = current_output[0]/current_output[2]	
+#			X_output = current_output[0]/current_output[2]
+#			Y_output = current_output[1]/current_output[2]	
+			X_output = current_output[0]
+			Y_output = current_output[1]
+			print("curr output 2: " + str(current_output[2]))
 			Z_output = zs_true
 
 			point_3d = [X_output,Y_output,Z_output]

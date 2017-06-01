@@ -26,10 +26,10 @@ bottom_right_y = ys + hs/2
 #top_right_y = ys - hs/2
 
 #trapezoid shape
-top_left_x = bottom_left_x + ws/10
-top_right_x = bottom_right_x - ws/10
-top_left_y = bottom_left_y + hs/10
-top_right_y = bottom_right_y + hs/10
+top_left_x = bottom_left_x + ws/12
+top_right_x = bottom_right_x - ws/12
+top_left_y = bottom_left_y - hs/12
+top_right_y = bottom_right_y - hs/12
 
 car_h = 1.397
 car_l = 3

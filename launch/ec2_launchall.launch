@@ -2,6 +2,8 @@
 	<arg name="bag_set" default="2" />
 	<arg name="bag_fn" default="11_f" />
 	<arg name="every_n_frames" default="" />
+	<arg name="write_xml" default="-x" />
+	<arg name="write_training" default="-t" />
 
 	<arg name="bagfile_path" default="/home/ruijia/udacity_competition/Didi-Release-2/Data/$(arg bag_set)/$(arg bag_fn).bag" />
 	
@@ -11,5 +13,5 @@
 	<include file="$(arg tf_path)" />
 	<node pkg="velodyne_pointcloud" type="cloud_node" name="velodyne_cloud_node" args="_calibration:=/opt/ros/indigo/share/velodyne_pointcloud/params/32db.yaml" />
 	<node pkg="kojaks" type="tracklet_viz.py" name="tracklet_viz" output="screen" args="$(arg kojaks_path)/true_tracklets/$(arg bag_set)/$(arg bag_fn)/tracklet_labels.xml" />
-	<node pkg="kojaks" type="kojaks_node.py" name="kojaks_trainer" required="true" output="screen" args="$(arg bagfile_path) $(arg kojaks_path) $(arg bag_set) $(arg bag_fn) $(arg every_n_frames)" />
+	<node pkg="kojaks" type="kojaks_node.py" name="kojaks_trainer" required="true" output="screen" args="$(arg bagfile_path) $(arg kojaks_path) $(arg bag_set) $(arg bag_fn) $(arg every_n_frames)" $(arg write_xml) $(arg write_training)"/>
 </launch>

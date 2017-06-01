@@ -112,7 +112,7 @@ class KojaksNode:
 				# call jordi's opencv function; pass it the cv_image and the correct tracklet
 				# returns an array [tx, ty, tz]
 				print (e)
-			print("this is frame " + str(self.cur_image_ctr))
+			#print("this is frame " + str(self.cur_image_ctr))
 			self.im_gen_obs_pose = kpred_obj.run_predictor_on_frame(cv_image, [], true_pose)
 
 		# append generated tracklet to tracklet listtrue_
